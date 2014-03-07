@@ -1,5 +1,16 @@
 <?php
+//Enable Post-Thumbalys
+add_theme_support('post-thumbnails');
 
+//Enable Custom Color and Logo in Header
+$args = array(
+	'width'         => 980,
+	'height'        => 60,
+	'default-text-color'		=> '000',
+	'default-image' => get_template_directory_uri() . '/images/header.jpg',
+	'uploads'       => true,
+);
+add_theme_support( 'custom-header', $args );
 
 
 //Menue in Header and Footer
@@ -8,17 +19,6 @@ function register_my_menus() {
 	register_nav_menus(array('header-menu' => __('Header Menu'),
 							'footer-menu' => __('Footer Menu')));
 }
-
-
-// Register Custom Navigation Walker
-require_once('PlugIns/wp-bootstrap-navwalker-master/wp_bootstrap_navwalker.php');
-
-
-//Beitragsbild-support
-add_theme_support( 'post-thumbnails' );
-
-
-
 
 
 //enable SVG
@@ -34,9 +34,8 @@ add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 //
 function posts_link_attributes() {
-    return 'class="postnav"';
+    return 'class="postnav window"';
 }
-
 
 
 //remove Image Size from Article
@@ -48,14 +47,6 @@ function remove_width_and_height_attribute( $html ) {
 
 add_filter('gallery_style', create_function('$a', 'return "
 <div class=\'gallery\'>";'));
-
-
-//Artikelauszug aktivieren
-add_action( 'init', 'kb_page_excerpts' );
-function kb_page_excerpts() {
-     add_post_type_support( 'page', 'excerpt' );
-}
-
 
 
 

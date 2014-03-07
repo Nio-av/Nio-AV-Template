@@ -1,3 +1,3 @@
-<!-- Piwik -->
+<!-- Google Tag Manager -->
 
-<!-- End Piwik Code -->
+<!-- End Google Tag Manager -->
