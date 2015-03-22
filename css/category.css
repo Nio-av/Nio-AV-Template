@@ -1,0 +1,41 @@
+#category-Background{
+    background-color: #F5C1C2;
+}
+
+#category{
+    background-color: #E03A3E;
+}
+
+#category ul{
+    display: inline;
+}
+
+.post-Background{
+    background-color: #DEC2DE;
+}
+
+.post{
+    background-color: #963D97;
+}
+
+.post article{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+/* Categorie-wähler */
+a.btn.btn-info.active{
+    font-weight: bold;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info{
+    background-color: #E76B6E;
+    border-color: transparent ;
+}
+
+.btn-info{
+    background-color: #E03A3E;
+    border-color: transparent ;
+}

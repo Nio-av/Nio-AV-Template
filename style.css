@@ -1,36 +1,8 @@
-.navbar-inverse{
-    background-color: #61BB46;
-    border-width: 0px;
-}
-.navbar-inverse a{
-    color: #FFF !important;
-}
-.dropdown-menu {
-    background-color: #CDE9C4;
-}
-
-.navbar {
-    border-radius: 0px;
-    max-width: 1000px;
-    display: block !important;
-    margin: 0px auto;
-}
-
-#header-Background {
-    background-color: #CDE9C4;
-    width: 100%;
-}
-
-#headline {
-    background-color: #FDB827;
-    max-width: 1000px;
-    margin: 0px auto;
-}
-
-#headline-background {
-    background-color: #FEE8BB;
-}
-
-h1 {
-    margin-top: auto;
-}
+/*
+ Theme Name: NioAV - V2
+ Theme URI: http://www.nio-av.de
+ Description: Template für eine Portfolio-Seite
+ Author: Nicolas Tribukait
+ Version: 2
+ Author URL: http://www.nio-av.de
+ */

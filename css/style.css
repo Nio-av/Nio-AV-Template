@@ -1,0 +1,125 @@
+/*
+++*Inhalt++*
+*Generelles
+*Inhalt
+*Hintergrund
+*Gruener Banner Datum
+*/
+
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Source+Code+Pro);
+
+
+
+
+/* HTML-Body fuer Footer vorbereiten */
+body, html{
+    background-color: #AFE0F4;
+   
+}
+
+
+
+
+
+
+/* Navigation */
+
+
+.navbar-inverse a{
+    color: #FFF !important;
+}
+.dropdown-menu {
+    background-color: #61BB46;
+}
+
+/* aktive Elemente im menü */
+.current-menu-item a, .open .dropdown-toggle, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    background-color: #CDE9C4 !important;
+    color: #61BB46 !important;
+}
+
+/* Rahmen des Menübuttons */
+.navbar-inverse .navbar-toggle{
+    border: inherit;
+    border-radius: inherit;
+}
+
+.navbar-inverse .navbar-toggle:hover{
+    background-color: #CDE9C4;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, {
+    border-color: #CDE9C4;
+    
+}
+
+@media(min-width: 768px){
+    .navbar-brand{
+        font-size: 2em;
+        padding-top: 40px;
+    }
+    
+}
+
+.navbar-nav > li > a{
+    font-weight: 200;
+    font-size: 18px;
+}
+
+@media(min-width: 768px){
+    .navbar-nav > li > a{
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+}
+
+
+#header-Background .navbar {
+    border-radius: inherit;
+    margin: 0px;
+    background-color: #61BB46;
+    border-width: inherit;
+}
+
+
+.center{
+    max-width: 1100px;
+    margin: 0px auto;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+    min-height: 100%;
+    color: white;
+    padding-left: 15px;
+    padding-right: 35px;
+}
+
+
+#header{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#header-Background {
+    background-color: #CDE9C4;
+    width: 100%;
+}
+
+#headline {
+    background-color: #FDB827;
+}
+
+#headline-background {
+    background-color: #FEE8BB;
+}
+
+#headline h1 {
+    margin-top: auto;
+    color: white;
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 4em;
+}
+
+
+img{
+    max-width: 100%;
+}

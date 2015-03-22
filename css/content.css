@@ -1,0 +1,21 @@
+#content-Background{
+    background-color: #FBD7B8;    
+}
+
+#content{
+    background-color: #F5821F;
+    padding-bottom: 150px;
+   
+}
+
+
+
+
+
+#content article h1{
+    margin-top: 0px;
+}
+
+article{
+    min-height: 100%;
+}
