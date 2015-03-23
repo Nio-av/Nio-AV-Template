@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-<!-- hier war der header -->
 
+
+<!-- Kategorien als breites Menü anzeigen -->
 <div id="category-Background">
     <nav id="category" class="center">
         
@@ -42,8 +43,7 @@
 
 
 
-
-
+<!-- eine einfache Navigation innerhalb der unterkategorien -->
     <div class="post-Background">
         <div class="post center">
             
@@ -53,17 +53,23 @@
                     $args = array(
                         'show_count'         => 1,
                         'hide_empty'         => 0,
-                        'use_desc_for_title' => 1,
+                        'category_description' => 0,
                         'title_li'           => __( '' ),
+                        'child_of'           => $thisTrueCat->term_id,
                     );
 
 
                     wp_list_categories($args); 
+                    echo single_cat_title();
+                    echo category_description();
                 ?>
             </div>
             
             
             
+            
+            
+            <!-- die Beiträge ausgeben -->
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             
             <article class="window post">
