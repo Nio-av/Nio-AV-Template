@@ -23,9 +23,8 @@
 
 
 <?php if ( !is_user_logged_in() ) /* Nur laden wenn User nicht eingeloggt ist. */ { ?>
-    <!-- Google Tag Manager -->
-        <!-- Code to be includet...
-    <!-- End Google Tag Manager -->
+    <!-- Für Trackingcode -->
+        <?php include_once 'tracking.php'; ?>
 <?php } ;?>
 
 
