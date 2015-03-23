@@ -49,6 +49,8 @@
             
             
             <div id="subcategorys">
+                
+                <!--
                 <?php
                     $args = array(
                         'show_count'         => 1,
@@ -63,29 +65,126 @@
                     echo single_cat_title();
                     echo category_description();
                 ?>
+                -->
+                
+                
+                
+                
+                 <?php
+                    
+                    foreach ( $categories as $category ) {
+                        if ($thisTrueCat->term_id == $category->term_id) {
+                            echo '<div id="child-category-selector" class="list-group">';
+
+
+                            $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
+
+                            $args = array(
+                                'orderby'       => 'name',
+                                'hide_empty'    => 0,
+                                'child_of'           => $thisTrueCat->term_id,
+                              );
+                            $categories = get_categories( $args );
+                            foreach ( $categories as $category ) {
+                                echo '<a href="' . get_category_link( $category->term_id ) . '" class="list-group-item';
+                                if ($thisTrueCat->term_id == $category->term_id) {
+                                    echo ' active';
+                                }
+                                echo '"> <h4 class="list-group-item-heading">';
+                                echo  $category->name . '</h4>' ;
+                                echo '<p class="list-group-item-text">' . $category->description . '</p>';
+                                echo '</a>';
+
+                                ?>
+
+
+                                <?php
+                            }
+                            echo '</div>';   
+                        }
+                    }
+                ?>
+                
+                
+                
+                
+
             </div>
             
             
+            <?php
+
+/*
+            function IsACategorySelected( $category ){
+                $categories = get_categories( );
+                $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
+                foreach ( $categories as $category ) {
+                    if ($thisTrueCat->term_id == $category->term_id) {
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                }
+            }
+
+            if(IsACategorySelected() == true){
+                echo 'funktioniert nicht';
+            }
+
+            
+
+
+            if(IsACategorySelected() == true){
+                echo 'funktioniert nicht';
+            }
             
             
+            */
+            ?>
             
-            <!-- die Beiträge ausgeben -->
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
             
-            <article class="window post">
-                <section>	
-                    <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                    <?php the_content() ?>
-                    
-                    <?php
-                        if (has_post_thumbnail()) {
-                            the_post_thumbnail();
-                        }
-                    ?>
-                </section>
-            </article>
+            <?php
+
+            $categories = get_categories( );
+            $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
+            foreach ( $categories as $category ) {
+                if ($thisTrueCat->term_id == $category->term_id) {
+                    echo '<div id="AllPostings">';
+                }
+            }
             
-            <?php endwhile; endif; ?>
+            ?>
+            
+            
+                <!-- die Beiträge ausgeben -->
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                <article class="window post">
+                    <section>	
+                        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                        <?php the_content() ?>
+
+                        <?php
+                            if (has_post_thumbnail()) {
+                                the_post_thumbnail();
+                            }
+                        ?>
+                    </section>
+                </article>
+
+                <?php endwhile; endif; ?>
+            
+            <?php
+            $categories = get_categories( );
+            $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
+            foreach ( $categories as $category ) {
+                if ($thisTrueCat->term_id == $category->term_id) {
+                    echo '</div>';
+                }
+            }
+            ?>
             
         </div>
     </div>

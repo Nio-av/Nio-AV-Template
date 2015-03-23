@@ -10,6 +10,15 @@
     display: inline;
 }
 
+#child-category-selector{
+    width: 30%;
+    padding-top: 20px;
+    float: left;
+}
+#AllPostings{
+    padding-left: 33%;
+}
+
 .post-Background{
     background-color: #DEC2DE;
 }
