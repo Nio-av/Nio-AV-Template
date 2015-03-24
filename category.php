@@ -1,6 +1,18 @@
 <?php get_header(); ?>
 
 
+<?php
+function IsACategorySelected(  ){
+    foreach ( get_categories( ) as $category ) {
+        if( get_category( get_query_var( 'cat' ) ) ->term_id == $category->term_id){
+            return true;
+        }
+    }
+}
+?>
+
+
+
 
 <!-- Kategorien als breites Menü anzeigen -->
 <div id="category-Background">
@@ -74,6 +86,7 @@
                     
                     foreach ( $categories as $category ) {
                         if ($thisTrueCat->term_id == $category->term_id) {
+                            //echo '<div id="lightcategorys>';
                             echo '<div id="child-category-selector" class="list-group">';
 
 
@@ -94,66 +107,29 @@
                                 echo  $category->name . '</h4>' ;
                                 echo '<p class="list-group-item-text">' . $category->description . '</p>';
                                 echo '</a>';
-
+                                
                                 ?>
 
 
                                 <?php
                             }
                             echo '</div>';   
+                            
                         }
                     }
                 ?>
-                
-                
-                
-                
-
             </div>
-            
-            
-            <?php
+                
+                
 
-/*
-            function IsACategorySelected( $category ){
-                $categories = get_categories( );
-                $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
-                foreach ( $categories as $category ) {
-                    if ($thisTrueCat->term_id == $category->term_id) {
-                        return false;
-                    }
-                    else{
-                        return true;
-                    }
-                }
-            }
-
-            if(IsACategorySelected() == true){
-                echo 'funktioniert nicht';
-            }
-
-            
-
-
-            if(IsACategorySelected() == true){
-                echo 'funktioniert nicht';
-            }
-            
-            
-            */
-            ?>
             
 
             
             <?php
-
-            $categories = get_categories( );
-            $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
-            foreach ( $categories as $category ) {
-                if ($thisTrueCat->term_id == $category->term_id) {
-                    echo '<div id="AllPostings">';
-                }
+            if(IsACategorySelected() == true){
+                echo '<div id="AllPostings">';
             }
+
             
             ?>
             
@@ -174,15 +150,10 @@
                     </section>
                 </article>
 
-                <?php endwhile; endif; ?>
+                <?php endwhile; endif; 
             
-            <?php
-            $categories = get_categories( );
-            $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
-            foreach ( $categories as $category ) {
-                if ($thisTrueCat->term_id == $category->term_id) {
-                    echo '</div>';
-                }
+            if(IsACategorySelected() == true){
+                echo '</div>';
             }
             ?>
             
