@@ -4,6 +4,7 @@
 
 #category{
     background-color: #E03A3E;
+    padding: inherit;
 }
 
 #category ul{
@@ -11,25 +12,35 @@
 }
 
 #child-category-selector{
-    width: 30%;
+    width: 100%;
     padding-top: 20px;
     float: left;
 }
-#AllPostings{
-    padding-left: 33%;
-}
+
 
 .post-Background{
     background-color: #DEC2DE;
 }
 
+/* hell hinterlegte subcategory-navigation */
 .post{
-    background-color: #963D97;
+    background-color: #A65CA7;
+    padding-right: inherit;
+    padding-left: inherit;
+}
+
+#subcategory-selector{
+    width: 33%;
+    padding: 0px 20px;
+}
+
+#AllPostings{
+    margin-left: 33%;
 }
 
 .post article{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    background-color: #963D97;
+    padding: 10px 20px;
 }
 
 

@@ -12,8 +12,6 @@ function IsACategorySelected(  ){
 ?>
 
 
-
-
 <!-- Kategorien als breites Menü anzeigen -->
 <div id="category-Background">
     <nav id="category" class="center">
@@ -60,7 +58,7 @@ function IsACategorySelected(  ){
         <div class="post center">
             
             
-            <div id="subcategorys">
+            <div id="subcategory-selector">
                 
                 <!--
                 <?php
@@ -86,7 +84,6 @@ function IsACategorySelected(  ){
                     
                     foreach ( $categories as $category ) {
                         if ($thisTrueCat->term_id == $category->term_id) {
-                            //echo '<div id="lightcategorys>';
                             echo '<div id="child-category-selector" class="list-group">';
 
 
@@ -107,29 +104,28 @@ function IsACategorySelected(  ){
                                 echo  $category->name . '</h4>' ;
                                 echo '<p class="list-group-item-text">' . $category->description . '</p>';
                                 echo '</a>';
-                                
+
                                 ?>
 
 
                                 <?php
                             }
-                            echo '</div>';   
+                            echo '</div>'; 
                             
                         }
                     }
                 ?>
+                
+                
             </div>
-                
-                
-
             
 
             
             <?php
+
             if(IsACategorySelected() == true){
                 echo '<div id="AllPostings">';
             }
-
             
             ?>
             
@@ -150,7 +146,7 @@ function IsACategorySelected(  ){
                     </section>
                 </article>
 
-                <?php endwhile; endif; 
+                <?php endwhile; endif;
             
             if(IsACategorySelected() == true){
                 echo '</div>';
