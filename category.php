@@ -84,9 +84,15 @@ function IsACategorySelected(  ){
                     
                     foreach ( $categories as $category ) {
                         if ($thisTrueCat->term_id == $category->term_id) {
+                            /* Link to Parent-Category */
+                            echo home_url();
+                            
+                            
                             echo '<div id="child-category-selector" class="list-group">';
-
-
+                            
+                            
+                            
+                            /* Category Selector */
                             $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
 
                             $args = array(
@@ -136,13 +142,9 @@ function IsACategorySelected(  ){
                 <article class="window post">
                     <section>	
                         <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                        <?php the_content() ?>
+                        <?php the_excerpt() ?>
 
-                        <?php
-                            if (has_post_thumbnail()) {
-                                the_post_thumbnail();
-                            }
-                        ?>
+                        <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
                     </section>
                 </article>
 

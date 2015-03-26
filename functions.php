@@ -50,6 +50,12 @@ add_filter('gallery_style', create_function('$a', 'return "
 <div class=\'gallery\'>";'));
 
 
+//Artikelauszug aktivieren
+add_action( 'init', 'kb_page_excerpts' );
+function kb_page_excerpts() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+
 
 
 
