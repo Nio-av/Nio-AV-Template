@@ -21,6 +21,9 @@
                 ?>
                 <?php the_content(); ?>
                 
+                <!-- verhindern von ineinanderlaufenden text -->
+                <div class="clear"></div>
+
             </article>
         </div>
     </div>

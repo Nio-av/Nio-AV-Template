@@ -40,7 +40,8 @@ endif;
                     echo $image[0];
             ?>
             ">
-            
+            <!-- verhindern von ineinanderlaufenden text -->
+                <div class="clear"></div>
             
         </article>
     </div>
