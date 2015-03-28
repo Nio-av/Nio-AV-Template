@@ -14,6 +14,7 @@ function IsACategorySelected(  ){
 
 <!-- Kategorien als breites Menü anzeigen -->
 <div id="category-Background">
+    <a name="catnav-anchor"></a>
     <nav id="category" class="center">
         
         <div class="btn-group btn-group-justified" role="group">
@@ -54,6 +55,20 @@ function IsACategorySelected(  ){
 
 
 <!-- eine einfache Navigation innerhalb der unterkategorien -->
+    
+    <!-- GoBack-Button -->
+    <?php
+        // Button: GoBack
+        if(IsACategorySelected() == true){
+            echo '<div class="center">';
+            echo '<a href="index.php#catnav-anchor" id="back-Nav">';
+            echo '<span class="glyphicon glyphicon-chevron-left"></span>';
+            echo '</a>';
+            echo '</div>';
+        }
+    ?>
+    
+    <!-- open subcategory Selector -->
     <div class="post-Background">
         <div class="post center">
             
@@ -85,11 +100,8 @@ function IsACategorySelected(  ){
                     foreach ( $categories as $category ) {
                         if ($thisTrueCat->term_id == $category->term_id) {
                             /* Link to Parent-Category */
-                            echo home_url();
-                            
                             
                             echo '<div id="child-category-selector" class="list-group">';
-                            
                             
                             
                             /* Category Selector */
@@ -121,9 +133,9 @@ function IsACategorySelected(  ){
                         }
                     }
                 ?>
-                
-                
-            </div>
+            </div> <!-- close subcategory-selector -->
+            
+            
             
 
             
@@ -151,10 +163,9 @@ function IsACategorySelected(  ){
                 <?php endwhile; endif;
             
             if(IsACategorySelected() == true){
-                echo '</div>';
+                echo '</div>'; //close AllPostings
             }
             ?>
-            
         </div>
     </div>
 

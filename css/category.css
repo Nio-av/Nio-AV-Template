@@ -31,7 +31,7 @@
 
 #subcategory-selector{
     width: 33%;
-    padding: 0px 20px;
+    padding: 0px 20px 0px 60px;
 }
 
 #AllPostings{
@@ -58,4 +58,15 @@ a.btn.btn-info.active{
 .btn-info{
     background-color: #E03A3E;
     border-color: transparent ;
+}
+
+/* zurück-button */
+#back-Nav{
+    background-color:#DEC4DF;
+    position:absolute;
+    height: 300px;
+    width: 40px;
+    margin-left: -15px;
+    color: white;
+    padding: 10px;
 }
