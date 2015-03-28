@@ -3,13 +3,10 @@
 }
 
 #category{
-    background-color: #E03A3E;
     padding: inherit;
+    
 }
 
-#category ul{
-    display: inline;
-}
 
 #child-category-selector{
     width: 100%;
@@ -57,7 +54,8 @@ a.btn.btn-info.active{
 
 .btn-info{
     background-color: #E03A3E;
-    border-color: transparent ;
+    border: inherit;
+    border-radius: inherit;
 }
 
 /* zurück-button */
@@ -70,6 +68,13 @@ a.btn.btn-info.active{
     color: white;
     padding: 10px;
 }
+#back-Nav:hover{
+    background-color: #E76B6E;
+    transition: all 0.4s ease-in;
+}
+
+
+
 #back-Nav p{
     transform: rotate(90deg);
     margin-top: 10px;
