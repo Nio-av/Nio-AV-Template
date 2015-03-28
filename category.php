@@ -63,6 +63,7 @@ function IsACategorySelected(  ){
             echo '<div class="center">';
             echo '<a href="index.php#catnav-anchor" id="back-Nav">';
             echo '<span class="glyphicon glyphicon-chevron-left"></span>';
+            echo '<p class="rotate">alle_Beiträge</p>';
             echo '</a>';
             echo '</div>';
         }

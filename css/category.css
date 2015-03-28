@@ -64,9 +64,13 @@ a.btn.btn-info.active{
 #back-Nav{
     background-color:#DEC4DF;
     position:absolute;
-    height: 300px;
+    height: 190px;
     width: 40px;
     margin-left: -15px;
     color: white;
     padding: 10px;
+}
+#back-Nav p{
+    transform: rotate(90deg);
+    margin-top: 10px;
 }
