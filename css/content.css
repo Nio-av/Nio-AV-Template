@@ -9,6 +9,13 @@
 }
 
 
+a{
+    color: #DDD;
+}
+a:hover{
+    color: #CCC;
+    transition: all 0.2s ease-in;
+}
 
 
 
