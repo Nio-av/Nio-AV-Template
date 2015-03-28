@@ -11,75 +11,11 @@
 
 
 
-/* HTML-Body fuer Footer vorbereiten */
+/* Generell */
 body, html{
     background-color: #AFE0F4;
    
 }
-
-
-
-
-
-
-/* Navigation */
-
-
-.navbar-inverse a{
-    color: #FFF !important;
-}
-.dropdown-menu {
-    background-color: #61BB46;
-}
-
-/* aktive Elemente im menü */
-.current-menu-item a, .open .dropdown-toggle, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
-    background-color: #CDE9C4 !important;
-    color: #61BB46 !important;
-}
-
-/* Rahmen des Menübuttons */
-.navbar-inverse .navbar-toggle{
-    border: inherit;
-    border-radius: inherit;
-}
-
-.navbar-inverse .navbar-toggle:hover{
-    background-color: #CDE9C4;
-}
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, {
-    border-color: #CDE9C4;
-    
-}
-
-@media(min-width: 768px){
-    .navbar-brand{
-        font-size: 2em;
-        padding-top: 40px;
-    }
-    
-}
-
-.navbar-nav > li > a{
-    font-weight: 200;
-    font-size: 18px;
-}
-
-@media(min-width: 768px){
-    .navbar-nav > li > a{
-        padding-top: 40px;
-        padding-bottom: 20px;
-    }
-}
-
-
-#header-Background .navbar {
-    border-radius: inherit;
-    margin: 0px;
-    background-color: #61BB46;
-    border-width: inherit;
-}
-
 
 .center{
     max-width: 1100px;
@@ -92,16 +28,66 @@ body, html{
 }
 
 
+
+
+
+/* Navigation */
+
+
+.navbar-inverse a{
+    color: #FFF !important;
+}
+
+
+/* aktive Elemente im menü */
+#header-Background, .current-menu-item a, .open .dropdown-toggle, .navbar-toggle:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    background-color: #CDE9C4 !important;
+    color: #61BB46 !important;
+}
+
+/* Rahmen des Menüs */
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, .navbar-toggle{
+    border: none;
+    border-radius: inherit;
+    
+}
+
+@media(min-width: 768px){
+    .navbar-brand{
+        font-size: 2em;
+        padding-top: 40px;
+    }
+    
+    .navbar-nav > li > a{
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+    
+}
+
+.navbar-nav > li > a{
+    font-weight: 200;
+    font-size: 18px;
+}
+
+
+#header-Background .navbar, .dropdown-menu {
+    border-radius: inherit;
+    margin: inherit;
+    background-color: #61BB46;
+    border-width: inherit;
+}
+
 #header{
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: inherit;
 }
 
-#header-Background {
-    background-color: #CDE9C4;
-    width: 100%;
-}
 
+
+
+
+
+/* Headline */
 #headline {
     background-color: #FDB827;
 }
