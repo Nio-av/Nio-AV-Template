@@ -28,7 +28,7 @@ endif;
                 <?php echo '<h1>'. $page_data->post_title .'</h1>';// echo the title ?>
             </div>
             
-            <img src="
+            <img class="wp-post-image" src="
                 <?php
                     if (has_post_thumbnail( get_option('page_for_posts') ) );
                         $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_option('page_for_posts') ), 'single-post-thumbnail' );
