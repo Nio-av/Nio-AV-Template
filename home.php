@@ -19,18 +19,14 @@ endif;
 ?>
 
 
-<div id="headline-background">
-    <div id="headline" class="center">
-        <?php echo '<h1>'. $page_data->post_title .'</h1>';// echo the title ?>
-    </div>
-</div>
-
-
 
 <div id="content-Background">
     <!-- fuer eine statische Seite -->
     <div id="content"  class="center">
         <article>
+            <div id="headline">
+                <?php echo '<h1>'. $page_data->post_title .'</h1>';// echo the title ?>
+            </div>
             <?php the_content(); ?>
             
             <img src="

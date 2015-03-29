@@ -1,17 +1,32 @@
-#content-Background{
-    background-color: #FBD7B8;    
+/* Headline */
+#headline h1 {
+    margin-top: auto;
+    margin: 0px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 6.8em;
 }
 
+@media(max-width:768px){
+    #headline h1 {
+        font-size: 5em;
+    }
+}
+@media(max-width:400px){
+    #headline h1 {
+        font-size: 3em;
+    }
+}
+
+
+
 #content{
-    background-color: #F5821F;
-    padding-bottom: 150px;
+    color: slategray;
+    
    
 }
 
 
-a{
-    color: #DDD;
-}
 a:hover{
     color: #CCC;
     transition: all 0.2s ease-in;
@@ -19,16 +34,13 @@ a:hover{
 
 
 
-#content article h1{
-    margin-top: 0px;
-}
 
 article{
     min-height: 100%;
 }
 
 article img{
-    width: 50%;
+    width: 25%;
     margin-right: 40px;
     margin-bottom: 40px;
     float: left;
@@ -36,4 +48,5 @@ article img{
 
 .clear {
     clear: both;
+    padding-bottom: 150px;
 }

@@ -1,6 +1,4 @@
-#category-Background{
-    background-color: #F5C1C2;
-}
+
 
 #category{
     padding: inherit;
@@ -15,13 +13,10 @@
 }
 
 
-.post-Background{
-    background-color: #DEC2DE;
-}
 
 /* hell hinterlegte subcategory-navigation */
 .post{
-    background-color: #A65CA7;
+    background-color: #E5E5E5;
     padding-right: inherit;
     padding-left: inherit;
 }
@@ -36,7 +31,6 @@
 }
 
 .post article{
-    background-color: #963D97;
     padding: 10px 20px;
 }
 
@@ -48,30 +42,32 @@ a.btn.btn-info.active{
 }
 
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info{
-    background-color: #E76B6E;
-    border-color: transparent ;
+    background-color: lightgray;
+    color: slategray;
 }
 
 .btn-info{
-    background-color: #E03A3E;
+    background-color: slategray;
     border: inherit;
     border-radius: inherit;
 }
 
 /* zurück-button */
 #back-Nav{
-    background-color:#DEC4DF;
+    background-color:lightgray;
     position:absolute;
     height: 190px;
     width: 40px;
     margin-left: -15px;
-    color: white;
+    color: slategrey;
     padding: 10px;
 }
 #back-Nav:hover{
-    background-color: #E76B6E;
+    background-color: lightslategrey;
+    color:lightgray;
     transition: all 0.4s ease-in;
 }
+
 
 
 
