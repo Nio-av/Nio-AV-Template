@@ -4,16 +4,23 @@
 
 #footer a{
     color: white;
+    
 }
 #footer li{
     display: inline;
-    
+    padding: 10px 25px 10px 0px;
 }
 
 #footernav ul{
     margin-bottom: auto;
+    padding: 20px 0px;
 }
 
-#socialMedia img {
+#socialMedia {
+    padding-top: 20px;
+}
+
+#socialMedia img{
+    padding-right: 20px;
     height: 50px;
 }
