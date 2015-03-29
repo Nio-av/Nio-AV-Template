@@ -78,8 +78,7 @@
                     <?php /* Primary navigation */
                         wp_nav_menu( array(
                           'menu' => 'top_menu',
-                          'depth' => 2,
-                          'container' => 'div',
+                          'theme_location' => 'header-menu',
                           'container_id' => 'myNavbar',
                           'container_class' => 'collapse navbar-collapse',
 
