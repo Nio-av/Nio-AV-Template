@@ -21,9 +21,7 @@
                         <?php wp_nav_menu( array('theme_location' => 'footer-menu' )); ?>
                 </nav>  
             </div>
-        </div><!-- ende footer -->
-    </div><!-- vertical-center -->
-</div><!-- wrapper -->   
+        </div><!-- ende footer -->  
  
 <?php wp_footer(); ?> <!-- For PlugIns -->
 
