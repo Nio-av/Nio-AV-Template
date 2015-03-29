@@ -1,0 +1,18 @@
+#postinformation{
+    background-color: #E5E5E5;
+    padding: 5px;
+    color: slategray;
+}
+
+#postinformation nav{
+    display: inline;
+}
+
+#postinformation nav a{
+    padding: 15px 15px;
+    color: slategray;
+}
+
+#postinformation time{
+    float: right;
+}
