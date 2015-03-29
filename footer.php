@@ -15,6 +15,7 @@
                     <a href="https://www.facebook.com/DigitaleMedien.Furtwangen" target="_blank"><img src="<?php echo(get_template_directory_uri()); ?>/PlugIns/SocialMediaIcons/F_icon.svg" alt="Facebook"> </a>
                     <a href="https://www.xing.com/communities/groups/digitale-medien-hochschule-furtwangen-18eb-1019108" target="_blank"><img src="<?php echo(get_template_directory_uri()); ?>/PlugIns/SocialMediaIcons/XING.svg" alt="Xing"> </a>
                     <a href="https://vimeo.com/dmfurtwangen" target="_blank"><img src="<?php echo(get_template_directory_uri()); ?>/PlugIns/SocialMediaIcons/Vimeo.svg" alt="Vimeo"> </a>
+                    <a href="//nio-av.de/kalender" target="_blank"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-calendar "></span></button></a>
                 </div>
 
                 <nav id="footernav">
