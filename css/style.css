@@ -52,10 +52,11 @@ a{
 
 
 /* aktive Elemente im menü */
-#header-Background, .current-menu-item a, .open .dropdown-toggle, .navbar-toggle:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
-    background-color: white !important;
+.current-menu-item a, .open .dropdown-toggle, .navbar-toggle:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    background-color: #E5E5E5 !important;
     color: slategray !important;
     font-weight: 300;
+    
 }
 
 /* Rahmen des Menüs */
