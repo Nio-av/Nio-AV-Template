@@ -167,9 +167,10 @@ function IsACategorySelected(  ){
                 echo '</div>'; //close AllPostings
             }
             ?>
-        </div>
-    </div>
-
+            <!-- verhindern von ineinanderlaufenden text -->
+            <div class="clear"></div>
+        </div> <!-- Close Post Center -->
+    </div> <!-- Close Post BAckground -->
 
 
 <?php next_posts_link(); ?>
