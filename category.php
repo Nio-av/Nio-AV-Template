@@ -26,7 +26,7 @@ function IsACategorySelected(  ){
 
             $args = array(
                 'orderby'       => 'name',
-                'hide_empty'    => 0,
+                'hide_empty'    => 1,
                 'parent'        => 0,
               );
             $categories = get_categories( $args );
