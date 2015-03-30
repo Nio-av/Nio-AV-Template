@@ -48,7 +48,6 @@ function IsACategorySelected(  ){
 </div>
 
 
-<?php previous_posts_link(); ?>
 
 
 
@@ -76,6 +75,7 @@ function IsACategorySelected(  ){
     <!-- open subcategory Selector -->
     <div class="post-Background">
         <div class="post center">
+            <?php previous_posts_link(); ?>
             
             
             <div id="subcategory-selector">
@@ -148,11 +148,9 @@ function IsACategorySelected(  ){
 
             
             <?php
-
-            if(IsACategorySelected() == true){
-                echo '<div id="AllPostings">';
-            }
-            
+                if(IsACategorySelected() == true){
+                    echo '<div id="AllPostings">';
+                }
             ?>
             
             
@@ -176,11 +174,12 @@ function IsACategorySelected(  ){
             ?>
             <!-- verhindern von ineinanderlaufenden text -->
             <div class="clear"></div>
+            
+            <?php next_posts_link(); ?>
         </div> <!-- Close Post Center -->
     </div> <!-- Close Post BAckground -->
 
 
-<?php next_posts_link(); ?>
 
 
 
