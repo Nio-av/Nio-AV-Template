@@ -61,9 +61,13 @@ function IsACategorySelected(  ){
         // Button: GoBack
         if(IsACategorySelected() == true){
             echo '<div class="center">';
-            echo '<a href="index.php#catnav-anchor" id="back-Nav">';
+            echo '<a href="?cat=' . get_category( get_query_var( 'cat' ) )->category_parent;
+            if( get_category( get_query_var( 'cat' ) )->category_parent == 0){
+                echo '#catnav-anchor';
+            }
+            echo '" id="back-Nav">';
             echo '<span class="glyphicon glyphicon-chevron-left"></span>';
-            echo '<p class="rotate">alle_Beiträge</p>';
+            echo '<p class="rotate">Zurück</p>';
             echo '</a>';
             echo '</div>';
         }
@@ -119,9 +123,12 @@ function IsACategorySelected(  ){
                                 if ($thisTrueCat->term_id == $category->term_id) {
                                     echo ' active';
                                 }
-                                echo '"> <h4 class="list-group-item-heading">';
+                                echo '"> ';
+                                echo '<span class="badge">' . $category->count . '</span>';
+                                echo '<h4 class="list-group-item-heading">';
                                 echo  $category->name . '</h4>' ;
                                 echo '<p class="list-group-item-text">' . $category->description . '</p>';
+                                
                                 echo '</a>';
 
                                 ?>
