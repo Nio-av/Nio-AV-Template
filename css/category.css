@@ -75,3 +75,10 @@ a.btn.btn-info.active{
     transform: rotate(90deg);
     margin-top: 10px;
 }
+
+
+
+/* navigation Next bzw. previous */
+.postnav{
+    margin-left: 33%;
+}
