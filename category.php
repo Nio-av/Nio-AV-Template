@@ -72,10 +72,12 @@ function IsACategorySelected(  ){
         }
     ?>
     
+    
+    
     <!-- open subcategory Selector -->
     <div class="post-Background">
         <div class="post center">
-            <?php previous_posts_link(); ?>
+            
             
             
             <div id="subcategory-selector">
@@ -113,7 +115,8 @@ function IsACategorySelected(  ){
                             $thisTrueCat = get_category( get_query_var( 'cat' ) ); 
 
                             $args = array(
-                                'orderby'       => 'name',
+                                'orderby'       => 'count',
+                                'order'         => 'desc',
                                 'hide_empty'    => 0,
                                 'child_of'           => $thisTrueCat->term_id,
                               );
@@ -153,6 +156,8 @@ function IsACategorySelected(  ){
                 }
             ?>
             
+            <!-- ggf. Link zur seite vorherige Beiträge -->
+            <?php previous_posts_link(); ?>
             
                 <!-- die Beiträge ausgeben -->
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -168,14 +173,21 @@ function IsACategorySelected(  ){
 
                 <?php endwhile; endif;
             
+            //ggf. Link Weitere Postings
+            
+
+            // <!-- verhindern von ineinanderlaufenden text -->
+            echo '<div class="clear"></div>';
+            next_posts_link();
+            // echo '#catnav-anchor';
+
             if(IsACategorySelected() == true){
                 echo '</div>'; //close AllPostings
             }
             ?>
-            <!-- verhindern von ineinanderlaufenden text -->
-            <div class="clear"></div>
             
-            <?php next_posts_link(); ?>
+            
+            
         </div> <!-- Close Post Center -->
     </div> <!-- Close Post BAckground -->
 
