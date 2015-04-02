@@ -60,7 +60,7 @@ function IsACategorySelected(  ){
         // Button: GoBack
         if(IsACategorySelected() == true){
             echo '<div class="center">';
-            echo '<a href="?cat=' . get_category( get_query_var( 'cat' ) )->category_parent;
+            echo '<a href="/?cat=' . get_category( get_query_var( 'cat' ) )->category_parent;
             if( get_category( get_query_var( 'cat' ) )->category_parent == 0){
                 echo '#catnav-anchor';
             }
