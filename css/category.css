@@ -82,6 +82,8 @@ a.btn.btn-info.active{
 
 #back-Nav p{
     transform: rotate(90deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
     margin-top: 10px;
 }
 
