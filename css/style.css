@@ -63,8 +63,17 @@ a{
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, .navbar-toggle{
     border: none;
     border-radius: inherit;
-    
 }
+
+/*
+@media(max-width: 768px){
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, .navbar-toggle{
+        float: left;
+        margin-left: 10px;
+        margin-right: auto;
+    }
+}
+*/
 
 @media(min-width: 768px){
     .navbar-brand{
@@ -103,7 +112,12 @@ a{
 }
 
 
-
+button{
+    background-color: #708090;
+    padding: 10px 20px;
+    color: white;
+    border: inherit;
+}
 
 
 
