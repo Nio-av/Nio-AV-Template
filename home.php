@@ -55,7 +55,7 @@ endif;
 <!-- Nach hier include -->
 
 <?php
-    include_once 'category.php';
+    //include_once 'category.php';
 ?>
 
 <!-- ab hier normal -->
