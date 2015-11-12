@@ -23,7 +23,7 @@
 
 
 a:hover{
-    color: #CCC;
+    /* color: #CCC; */
     transition: all 0.2s ease-in;
 }
 
@@ -32,6 +32,10 @@ a:hover{
 
 article{
     min-height: 100%;
+}
+
+article blockquote{
+	font-style: italic;
 }
 
 article .wp-post-image{

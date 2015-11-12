@@ -32,12 +32,12 @@ img:hover{
 }
 
 * > article{
-    color: slategray;
+    color: #083167;
     font-size: 1.1em;
 }
 
 a{
-    color: darkslategrey;
+    color: #24324C;
 }
 
 
@@ -54,7 +54,7 @@ a{
 /* aktive Elemente im menü */
 .current-menu-item a, .open .dropdown-toggle, .navbar-toggle:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
     background-color: #E5E5E5 !important;
-    color: slategray !important;
+    color: #083167 !important;
     font-weight: 300;
     
 }
@@ -97,7 +97,7 @@ a{
 #header-Background .navbar, .dropdown-menu {
     border-radius: inherit;
     margin: inherit;
-    background-color: slategrey;
+    background-color: #083167;
     border-width: inherit;
 }
 

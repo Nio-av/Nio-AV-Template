@@ -1,7 +1,7 @@
 #postinformation{
-    background-color: #E5E5E5;
+    background-color: #31B0D5;
     padding: 5px;
-    color: slategray;
+    color: #083167;
 }
 
 #postinformation nav{
@@ -10,7 +10,7 @@
 
 #postinformation nav a{
     padding: 15px 15px;
-    color: slategray;
+    color: #083167;
 }
 
 #postinformation time{
