@@ -98,7 +98,7 @@ a{
     border-radius: inherit;
     margin: inherit;
     background-color: #083167;
-    border-width: inherit;
+    border-width: 0px;
 }
 
 #header{
