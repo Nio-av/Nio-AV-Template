@@ -32,15 +32,16 @@
 
   
   
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
   
   
 	<!--[if lt IE 9]>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
 	<![endif]-->
-  
+	
+	
   
   
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/style.css">
@@ -48,6 +49,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/content.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/category.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/single.css">
+    
 </head>
 <body>
     
