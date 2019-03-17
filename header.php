@@ -49,6 +49,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/content.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/category.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/single.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/responsivVideo.css">
     
 </head>
 <body>

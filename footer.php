@@ -32,6 +32,7 @@
 <?php
     include_once "tracking.php";
 ?>
-
+<script src="<?php echo(get_template_directory_uri()); ?>/script.js" defer></script>
+  
 </body>
 </html>
