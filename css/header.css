@@ -1,0 +1,32 @@
+#posttitel{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: yellow;
+}
+#brand{
+    grid-column: 3;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header{
+    margin-top: 20px;
+}
+
+nav{
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+#pageDescription{
+    word-spacing: 100vw;
+}
+
+#fitty{
+    width: 1000px;
+    height: 100px;
+}
+
+#posttitel{
+     
+ }

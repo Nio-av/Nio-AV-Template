@@ -10,48 +10,94 @@
 
 
 <script type="text/javascript" src="<?php echo(get_template_directory_uri()); ?>/frameworks/blur.js"></script>
-
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
 
 <link href="<?php echo(get_template_directory_uri()); ?>/style.css" rel="stylesheet" type="text/css" />
 
-
-<!--[if lt IE 9]>
-	<h1 style="color:red; background-color:yellow";>Dein Webbrowser wird leider nicht mehr unterstützt, da er seit mindestens 5 Jahren veraltet ist. Probier doch Firefox aus.</h1>
-<![endif]-->
-
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
 
 
-<html lang="de">
-	<head>
-		<meta charset="UTF-8">
-		<title><?php wp_title(); ?> - <?php bloginfo('name'); ?></title>
-		
-		
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-		<!-- For Ping -->
+    <!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+	<![endif]-->
+
+
+    <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/responsivVideo.css">
+
+</head>
+<body>
+<header>
+
 
 		<?php wp_head(); ?>
 		<meta name="author" content="<?php the_author() ?>" />
 
+    <h1 id="posttitel">
+        <div class="fitty">
+            <?php the_title(); ?>
+        </div>
 
-        <?php if ( !is_user_logged_in() ) /* Nur laden wenn User nicht eingeloggt ist. */ { ?>
-            <!-- Für Trackingcode -->
-            <?php include_once 'tracking.php'; ?>
-        <?php } ;?>
+    </h1>
 
-        
+    <div id="brand">
+    <a href="<?php echo home_url(); ?>">
+        <div id="pageName"><?php bloginfo('name');?></div>
+    </a>
+    <?php
+    if( get_bloginfo('description') != false ){
+        echo '<div id="pageDescription">';
+        bloginfo('description');
+        echo '</div>';
+    }
+    ?>
+    </div>
 
-	</head>
 
-	<body>
-        
-        
-		<div id="header" class="window">
-			
-				<h1 id="pagelogo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-				
-				<nav id="pagenav">
-					<?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
-				</nav>
 
-		</div>
+    <script src="<?php echo(get_template_directory_uri()); ?>/PlugIns/fitty/fitty.js"></script>
+
+    <script>
+        fitty('.fitty', {
+            maxSize: 150
+        });
+
+    </script>
+
+
+
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <?php /* Primary navigation */
+            wp_nav_menu( array(
+                    'menu' => 'top_menu',
+                    'theme_location' => 'header-menu',
+                    'container_id' => 'myNavbar',
+                    'container_class' => 'collapse navbar-collapse',
+
+                    'menu_class' => 'nav navbar-nav navbar-right',
+                    //Process nav menu using our custom nav walker
+                    'walker' => new wp_bootstrap_navwalker())
+            );
+            ?>
+        </div>
+    </nav>
+
+
+
+
+</header>

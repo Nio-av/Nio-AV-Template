@@ -1,0 +1,95 @@
+
+
+#category{
+    padding: inherit;
+    
+}
+
+
+#child-category-selector{
+    width: 100%;
+    padding-top: 20px;
+    float: left;
+}
+
+
+/* hell hinterlegte subcategory-navigation */
+.post{
+    background-color: #D9E9F6;
+    padding-right: inherit;
+    padding-left: inherit;
+}
+
+#subcategory-selector{
+    width: 33%;
+    padding: 0px 20px 0px 60px;
+}
+@media(max-width: 768px){
+    #subcategory-selector{
+        width: inherit;
+    }
+}
+
+#AllPostings{
+    margin-left: 33%;
+}
+@media(max-width: 768px){
+    #AllPostings{
+        margin-left: 40px;
+    }
+}
+
+.post article{
+    padding: 10px 20px;
+}
+
+
+
+/* Categorie-wähler */
+a.btn.btn-info.active{
+    font-weight: bold;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info{
+    /* background-color: lightgray; */
+    color: #083167;
+}
+
+.btn-info{
+    background-color: #083167;
+    border: inherit;
+    border-radius: inherit;
+}
+
+/* zurück-button */
+#back-Nav{
+    background-color:#31B0D5;
+    position:absolute;
+    height: 190px;
+    width: 40px;
+    margin-left: -15px;
+    color: #083167;
+    padding: 10px;
+}
+#back-Nav:hover{
+    background-color: #083167;
+    color:#D9E9F6;
+    transition: all 0.4s ease-in;
+}
+
+
+
+
+#back-Nav p{
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    margin-top: 10px;
+}
+
+
+
+/* navigation Next bzw. previous */
+.postnav{
+    margin-left: 20px;
+}

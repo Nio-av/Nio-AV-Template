@@ -1,11 +1,6 @@
-# Very first Template
+# Nio-AV-Template
 
-frameworks Directory includes:
-- fancyBox -> http://fancyapps.com/fancybox/
-- Parallax-JS-master -> http://razorfish.github.com/Parallax-JS
-- blur.js -> https://github.com/jakiestfu/Blur.js
+This is the new Wordpress-Template for my private Portfolio-Webpage.
+For more Information, See: <a href="//www.nio-av.de/?utm_source=github&utm_medium=social&utm_campaign=Personal-Timeline">nio-av.de</a>.
 
-nicht_verwendet includes:
-- jquery.backstretch.js http://srobbin.com/jquery-plugins/backstretch/
-- responsive-nav.css -> https://github.com/viljamis/responsive-nav.js
-- responsive-nav.js -> https://github.com/viljamis/responsive-nav.js
+menu: <a href="//github.com/twittem/wp-bootstrap-navwalker">Bootstrap Navwalker</a>

@@ -1,0 +1,48 @@
+/*
+++*Inhalt++*
+*Generelles
+*Inhalt
+*Hintergrund
+*Button
+*/
+
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Cousine|Ubuntu:300');
+
+
+*{
+    font-family: 'Cousine', monospace;
+}
+
+
+h1, h2, h3, h4, h5, h6, header{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+/* Generell */
+img{
+    max-width: 100%;
+    filter: grayscale(40%);
+}
+img:hover{
+    filter: grayscale(0%);
+    transition: all 1s;
+}
+
+/* grid */
+header{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 0.5fr;
+    background-color: #2196F3;
+}
+
+header > div {
+    background-color: rgba(255, 255, 255, 0.8);
+
+}

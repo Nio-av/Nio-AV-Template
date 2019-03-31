@@ -1,0 +1,58 @@
+/* Headline */
+#headline h1 {
+    margin-top: auto;
+    margin: 0px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 8vw;
+}
+
+@media(min-width:1100px){
+    #headline h1 {
+        font-size: 6em;
+    }
+}
+
+
+
+#content{
+    color: slategray;
+    
+   
+}
+
+
+a:hover{
+    /* color: #CCC; */
+    transition: all 0.2s ease-in;
+}
+
+
+
+
+article{
+    min-height: 100%;
+}
+
+article blockquote{
+	font-style: italic;
+}
+
+article .wp-post-image{
+    min-width: 350px;
+    width: 25%;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    float: left;
+}
+@media(max-width:400px){
+    article .wp-post-image{
+        width: 100%;
+    }
+}
+
+
+.clear {
+    clear: both;
+    padding-bottom: 150px;
+}
