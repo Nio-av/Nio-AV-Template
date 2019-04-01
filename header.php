@@ -1,27 +1,30 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        <?php
+        wp_title();
+        if (is_front_page() == false) {
+            echo " - ";
+        }
+        bloginfo('name');
+        ?>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-<!-- Add fancyBox main JS and CSS files -->
-<script type="text/javascript" src="<?php echo(get_template_directory_uri()); ?>/frameworks/fancyBox/jquery.fancybox.js?v=2.1.5"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/frameworks/fancyBox/jquery.fancybox.css?v=2.1.5" media="screen" />
-<script src="<?php echo(get_template_directory_uri()); ?>/design.js"></script>
-
-
-<script type="text/javascript" src="<?php echo(get_template_directory_uri()); ?>/frameworks/blur.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
-
-<link href="<?php echo(get_template_directory_uri()); ?>/style.css" rel="stylesheet" type="text/css" />
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
+    <?php wp_head(); ?>
+    <meta name="author" content="<?php the_author() ?>"/>
 
 
-    <!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
-	<![endif]-->
+    <?php if (!is_user_logged_in()) /* Nur laden wenn User nicht eingeloggt ist. */ { ?>
+        <!-- Für Trackingcode -->
+        <?php include_once 'tracking.php'; ?>
+    <?php }; ?>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/style.css">
@@ -33,29 +36,27 @@
 <header>
 
 
-		<?php wp_head(); ?>
-		<meta name="author" content="<?php the_author() ?>" />
+    <?php wp_head(); ?>
+    <meta name="author" content="<?php the_author() ?>"/>
 
     <h1 id="posttitel">
         <div class="fitty">
             <?php the_title(); ?>
         </div>
-
     </h1>
 
     <div id="brand">
-    <a href="<?php echo home_url(); ?>">
-        <div id="pageName"><?php bloginfo('name');?></div>
-    </a>
-    <?php
-    if( get_bloginfo('description') != false ){
-        echo '<div id="pageDescription">';
-        bloginfo('description');
-        echo '</div>';
-    }
-    ?>
+        <a href="<?php echo home_url(); ?>">
+            <div id="pageName"><?php bloginfo('name'); ?></div>
+        </a>
+        <?php
+        if (get_bloginfo('description') != false) {
+            echo '<div id="pageDescription">';
+            bloginfo('description');
+            echo '</div>';
+        }
+        ?>
     </div>
-
 
 
     <script src="<?php echo(get_template_directory_uri()); ?>/PlugIns/fitty/fitty.js"></script>
@@ -64,9 +65,7 @@
         fitty('.fitty', {
             maxSize: 150
         });
-
     </script>
-
 
 
     <nav class="navbar navbar-inverse" role="navigation">
@@ -83,7 +82,7 @@
             </div>
 
             <?php /* Primary navigation */
-            wp_nav_menu( array(
+            wp_nav_menu(array(
                     'menu' => 'top_menu',
                     'theme_location' => 'header-menu',
                     'container_id' => 'myNavbar',
@@ -96,8 +95,5 @@
             ?>
         </div>
     </nav>
-
-
-
 
 </header>
