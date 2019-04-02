@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cousine|Ubuntu:300');
 
 
-*{
+main{
     font-family: 'Cousine', monospace;
 }
 
@@ -38,11 +38,12 @@ header{
     width: 80vw;
     max-width: 1000px;
     display: grid;
-    grid-template-columns: 2fr 0.5fr 0.5fr;
-    background-color: #2196F3;
+    grid-template-columns: repeat(12, 1fr);
+/*    background-color: #2196F3; */
+    font-family: 'Ubuntu', sans-serif;
 }
 
 header > div {
-    background-color: rgba(255, 255, 255, 0.8);
+ /*   background-color: rgba(255, 255, 255, 0.8); */
 
 }

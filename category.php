@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<main>
 
 <?php
 function IsACategorySelected(  ){
@@ -192,7 +192,7 @@ function IsACategorySelected(  ){
     </div> <!-- Close Post BAckground -->
 
 
-
+</main>
 
 
 <?php get_footer(); ?>
