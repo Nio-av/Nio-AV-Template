@@ -1,13 +1,13 @@
            
-            <aside>
+            <div id="sidebar">
                 <!-- For Widgets -->
                 <?php
                     dynamic_sidebar( 'Footer' );
                 ?>
-            </aside>
+            </div>
             
             
-        <footer>
+        <div id="footer-Background"> 
             <div id="footer" class="center">
 
                 
@@ -24,7 +24,7 @@
                         <?php wp_nav_menu( array('theme_location' => 'footer-menu' )); ?>
                 </nav>  
             </div>
-        </footer>
+        </div><!-- ende footer -->  
  
 <?php wp_footer(); ?> <!-- For PlugIns -->
 
