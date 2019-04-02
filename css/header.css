@@ -39,7 +39,7 @@ header{
 }
 
 nav{
-    grid-row: 3;
+    grid-row: 2;
     grid-column: span 12;
 }
 

@@ -32,49 +32,21 @@ img:hover{
     filter: grayscale(0%);
     transition: all 1s;
 }
-body{
+
+/* grid */
+header{
     margin-left: auto;
     margin-right: auto;
     width: 80vw;
     max-width: 1000px;
-
-
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-
-}
-
-/* grid */
-header{
-    grid-column: span 12;
 /*    background-color: #2196F3; */
     font-family: 'Ubuntu', sans-serif;
 }
 
-#headerBevoreNav{
-    grid-row: 1;
-}
-nav{
-    grid-row: 2;
-
-}
-
-main{
-    grid-row: 4;
-    grid-column: span 12;
-}
-
-footer{
-    grid-row: 30;
-
-    grid-column: span 12;
-}
-
-
-@media (max-width: 400px) {
-    body{
-        width: 94vw;
-    }
+header > div {
+ /*   background-color: rgba(255, 255, 255, 0.8); */
 
 }
 
