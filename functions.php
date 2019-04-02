@@ -11,7 +11,7 @@ function register_my_menus() {
 
 
 // Register Custom Navigation Walker
-require_once('PlugIns/wp-bootstrap-navwalker-master/wp_bootstrap_navwalker.php');
+require_once('PlugIns/wp-bootstrap-navwalker-master/class-wp-bootstrap-navwalker.php');
 
 
 //Beitragsbild-support

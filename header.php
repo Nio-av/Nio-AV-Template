@@ -22,9 +22,9 @@
         <?php include_once 'tracking.php'; ?>
     <?php }; ?>
 
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-    <script src="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/style.css">
@@ -72,30 +72,24 @@
     </script>
 
 
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-            </div>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <?php /* Primary navigation */
-            wp_nav_menu(array(
-                    'menu' => 'top_menu',
-                    'theme_location' => 'header-menu',
-                    'container_id' => 'myNavbar',
-                    'container_class' => 'collapse navbar-collapse',
-
-                    'menu_class' => 'nav navbar-nav navbar-right',
-                    //Process nav menu using our custom nav walker
-                    'walker' => new wp_bootstrap_navwalker())
-            );
+            wp_nav_menu( array(
+                'theme_location'  => 'header-menu',
+                'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                'container'       => 'div',
+                'container_class' => 'collapse navbar-collapse',
+                'container_id'    => 'bs-example-navbar-collapse-1',
+                'menu_class'      => 'navbar-nav mr-auto',
+                'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                'walker'          => new WP_Bootstrap_Navwalker(),
+            ) );
             ?>
         </div>
     </nav>
