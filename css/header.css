@@ -1,11 +1,32 @@
 #posttitel{
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-row: 1;
+    grid-column: span 9;
     background-color: yellow;
+
+
 }
-#brand{
-    grid-column: 3;
-    font-family: 'Ubuntu', sans-serif;
+#branding{
+    grid-column: 11 / span 2;
+
+
+
+
+
+
+}
+.verticalCenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+}
+.centerChilds{
+    justify-content: center;
+
+    border-style: none none none solid;
+    padding: 10px 0px 10px 20px;
+    border-width: 1px;
 }
 
 header{
@@ -14,19 +35,16 @@ header{
 
 nav{
     grid-row: 2;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: span 12;
 }
 
 #pageDescription{
     word-spacing: 100vw;
 }
 
-#fitty{
-    width: 1000px;
+#fittyR{
     height: 100px;
 }
 
-#posttitel{
-     
- }
+.fitty{
+}

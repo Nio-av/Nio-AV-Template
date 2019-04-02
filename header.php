@@ -22,9 +22,9 @@
         <?php include_once 'tracking.php'; ?>
     <?php }; ?>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" defer></script>
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/style.css">
@@ -45,17 +45,21 @@
         </div>
     </h1>
 
-    <div id="brand">
-        <a href="<?php echo home_url(); ?>">
-            <div id="pageName"><?php bloginfo('name'); ?></div>
-        </a>
-        <?php
-        if (get_bloginfo('description') != false) {
-            echo '<div id="pageDescription">';
-            bloginfo('description');
-            echo '</div>';
-        }
-        ?>
+    <div id="branding">
+        <div class="verticalCenter">
+            <div class="centerChilds">
+            <a href="<?php echo home_url(); ?>">
+                <?php bloginfo('name'); ?>
+            </a>
+            <?php
+            if (get_bloginfo('description') != false) {
+                echo '<div id="pageDescription">';
+                bloginfo('description');
+                echo '</div>';
+            }
+            ?>
+            </div>
+        </div>
     </div>
 
 
