@@ -3,6 +3,11 @@
     grid-column: span 8;
     max-width: 100%;
 }
+
+#posttitel > div{
+    /* Fix for Chromium */
+    display: inline;
+}
 #branding{
     grid-column: 10 / span 2;
 
