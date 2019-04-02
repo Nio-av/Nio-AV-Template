@@ -35,10 +35,6 @@
 <body>
 <header>
 
-
-    <?php wp_head(); ?>
-    <meta name="author" content="<?php the_author() ?>"/>
-
     <h1 id="posttitel">
         <div class="fitty verticalCenter">
             <?php the_title(); ?>
