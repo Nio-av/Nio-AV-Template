@@ -35,37 +35,41 @@
 <body>
 <header>
 
-    <h1 id="posttitel">
-        <div class="fitty verticalCenter">
-            <?php the_title(); ?>
-        </div>
-    </h1>
+    <div id="headerBevoreNav">
+        <h1 id="posttitel">
+            <div class="fitty verticalCenter">
+                <?php the_title(); ?>
+            </div>
+        </h1>
 
-    <div class="desktoponly" id="branding">
-        <div class="verticalCenter">
-            <div class="centerChilds">
-            <a href="<?php echo home_url(); ?>">
-                <?php bloginfo('name'); ?>
-            </a>
-            <?php
-            if (get_bloginfo('description') != false) {
-                echo '<div id="pageDescription">';
-                bloginfo('description');
-                echo '</div>';
-            }
-            ?>
+        <div class="desktoponly" id="branding">
+            <div class="verticalCenter">
+                <div class="centerChilds">
+                    <a href="<?php echo home_url(); ?>">
+                        <?php bloginfo('name'); ?>
+                    </a>
+                    <?php
+                    if (get_bloginfo('description') != false) {
+                        echo '<div id="pageDescription">';
+                        bloginfo('description');
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
             </div>
         </div>
+
+
+        <script src="<?php echo(get_template_directory_uri()); ?>/PlugIns/fitty/fitty.js"></script>
+
+        <script>
+            fitty('.fitty', {
+                maxSize: 150
+            });
+        </script>
     </div>
 
 
-    <script src="<?php echo(get_template_directory_uri()); ?>/PlugIns/fitty/fitty.js"></script>
-
-    <script>
-        fitty('.fitty', {
-            maxSize: 150
-        });
-    </script>
 
 
     <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
