@@ -40,12 +40,12 @@
     <meta name="author" content="<?php the_author() ?>"/>
 
     <h1 id="posttitel">
-        <div class="fitty">
+        <div class="fitty verticalCenter">
             <?php the_title(); ?>
         </div>
     </h1>
 
-    <div id="branding">
+    <div class="desktoponly" id="branding">
         <div class="verticalCenter">
             <div class="centerChilds">
             <a href="<?php echo home_url(); ?>">
@@ -74,10 +74,14 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
         <div class="container">
+
+            <a class="navbar-brand mobileonly" href="#"><?php bloginfo('name'); ?></a>
             <!-- Brand and toggle get grouped for better mobile display -->
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+
 
             <?php /* Primary navigation */
             wp_nav_menu( array(

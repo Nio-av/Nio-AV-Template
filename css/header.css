@@ -1,16 +1,18 @@
 #posttitel{
     grid-row: 1;
-    grid-column: span 9;
+    grid-column: span 8;
+    max-width: 100%;
 }
 #branding{
-    grid-column: 11 / span 2;
-
-
-
-
-
+    grid-column: 10 / span 2;
 
 }
+
+
+.centerChilds > a{
+    color: darkblue;
+}
+
 .verticalCenter{
     position: relative;
     top: 50%;
@@ -34,9 +36,14 @@ header{
 nav{
     grid-row: 2;
     grid-column: span 12;
-
-
 }
+
+#pageDescription{
+    word-spacing: 100vw;
+}
+
+/* Bootstrap navigation */
+
 .navbar{
     padding: inherit;
 }
@@ -45,13 +52,8 @@ nav{
     padding-left: inherit;
 }
 
-#pageDescription{
-    word-spacing: 100vw;
-}
 
-#fittyR{
-    height: 100px;
-}
 
-.fitty{
+.container{
+    max-width: inherit;
 }
