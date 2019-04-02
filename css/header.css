@@ -1,9 +1,6 @@
 #posttitel{
     grid-row: 1;
     grid-column: span 9;
-    background-color: yellow;
-
-
 }
 #branding{
     grid-column: 11 / span 2;
@@ -24,9 +21,10 @@
 .centerChilds{
     justify-content: center;
 
-    border-style: none none none solid;
+    border-style: none none none dotted;
+    border-color: darkgray;
     padding: 10px 0px 10px 20px;
-    border-width: 1px;
+    border-width: 0.5px;
 }
 
 header{
@@ -36,6 +34,15 @@ header{
 nav{
     grid-row: 2;
     grid-column: span 12;
+
+
+}
+.navbar{
+    padding: inherit;
+}
+
+.navbar > .container{
+    padding-left: inherit;
 }
 
 #pageDescription{
