@@ -28,7 +28,7 @@
 .centerChilds{
     justify-content: center;
 
-    border-style: none none none dotted;
+    border-style: none none none solid;
     border-color: darkgray;
     padding: 10px 0px 10px 20px;
     border-width: 0.5px;
@@ -38,10 +38,11 @@ header{
     margin-top: 20px;
 }
 
-nav{
+header nav{
     grid-row: 2;
     grid-column: span 12;
 }
+
 
 #pageDescription{
     word-spacing: 100vw;
@@ -61,4 +62,19 @@ nav{
 
 .container{
     max-width: inherit;
+}
+
+@media(max-width: 768px) {
+    nav{
+        background-color: #f8f9fa;
+    }
+}
+
+@media(min-width: 768px) {
+    nav{
+        margin-top: 1em;
+        border-style: solid none;
+        border-width: 0.5px;
+        border-color: darkgray;
+    }
 }

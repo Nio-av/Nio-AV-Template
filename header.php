@@ -22,9 +22,10 @@
         <?php include_once 'tracking.php'; ?>
     <?php }; ?>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    <script src="<?php echo(get_template_directory_uri()); ?>/PlugIns/fitty/fitty.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/style.css">
@@ -59,7 +60,7 @@
     </div>
 
 
-    <script src="<?php echo(get_template_directory_uri()); ?>/PlugIns/fitty/fitty.js"></script>
+
 
     <script>
         fitty('.fitty', {
@@ -68,7 +69,7 @@
     </script>
 
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+    <nav class="navbar navbar-expand-md navbar-light" role="navigation">
         <div class="container">
 
             <a class="navbar-brand mobileonly" href="#"><?php bloginfo('name'); ?></a>
