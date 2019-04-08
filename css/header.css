@@ -38,9 +38,10 @@ header{
     margin-top: 20px;
 }
 
-header nav{
+nav{
     grid-row: 2;
     grid-column: span 12;
+    position: fixed;
 }
 
 
@@ -58,6 +59,12 @@ header nav{
     padding-left: inherit;
 }
 
+.blur{
+    -webkit-backdrop-filter: blur(7px);
+    -moz-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    background-color: rgba(248, 249, 250, 0.51);
+}
 
 
 .container{
