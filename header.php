@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/page.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(get_template_directory_uri()); ?>/css/responsivVideo.css">
 
 </head>
