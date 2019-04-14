@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main>
+
 <?php
 if ( 'page' == get_option('show_on_front') && get_option('page_for_posts') && is_home() ) : the_post();
     $page_for_posts_id = get_option('page_for_posts');

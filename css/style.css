@@ -9,6 +9,16 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css?family=Cousine|Ubuntu:300');
 
+/* Variables */
+:root {
+    --mainLinkColor: #0056b3;
+    --secondaryLinkColor: darkblue;
+    --mainDecorationColor: darkgray;
+    --secondaryDecorationColor: #f8f9fa;
+    --mainMargin: 1em;
+    --secondaryMargin: calc(var(--mainMargin) / 2);
+}
+
 
 main{
     font-family: 'Cousine', monospace;
@@ -33,11 +43,6 @@ img:hover{
     transition: all 1s;
 }
 
-/* grid */
-header{
-    font-family: 'Ubuntu', sans-serif;
-}
-
 .grid{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -48,11 +53,6 @@ header{
     margin-right: auto;
     width: 80vw;
     max-width: 1000px;
-}
-
-header > div {
- /*   background-color: rgba(255, 255, 255, 0.8); */
-
 }
 
 /* responsive */

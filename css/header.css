@@ -15,7 +15,7 @@
 
 
 .centerChilds > a{
-    color: darkblue;
+    color: var(--secondaryLinkColor);
 }
 
 .verticalCenter{
@@ -27,15 +27,15 @@
 }
 .centerChilds{
     justify-content: center;
-
     border-style: none none none solid;
-    border-color: darkgray;
-    padding: 10px 0px 10px 20px;
+    border-color: var(--mainDecorationColor);
+    padding: var(--secondaryMargin) 0 var(--secondaryMargin) var(--mainMargin);
     border-width: 0.5px;
 }
 
 header{
-    margin-top: 20px;
+    margin-top: var(--mainMargin);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 nav{
@@ -63,7 +63,7 @@ nav{
     -webkit-backdrop-filter: blur(7px);
     -moz-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
-    background-color: rgba(248, 249, 250, 0.51);
+    background-color: rgba(248, 249, 250, 0.80);
 }
 
 
@@ -73,13 +73,13 @@ nav{
 
 @media(max-width: 768px) {
     nav{
-        background-color: #f8f9fa;
+        background-color: var(--secondaryDecorationColor);
     }
 }
 
 @media(min-width: 768px) {
     nav{
-        margin-top: 1em;
+        margin-top: var(--mainMargin);
         border-style: solid none;
         border-width: 0.5px;
         border-color: darkgray;
