@@ -17,6 +17,8 @@
     --secondaryDecorationColor: #f8f9fa;
     --mainMargin: 1em;
     --secondaryMargin: calc(var(--mainMargin) / 2);
+    --socialMediaIconSize: 50px;
+    --socialMediaIconPath: "/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/";
 }
 
 

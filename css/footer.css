@@ -1,0 +1,65 @@
+
+footer a::before{
+    content: "";
+    display: block;
+    visibility: initial;
+    width: var(--socialMediaIconSize);
+    height: var(--socialMediaIconSize);;
+    float: left;
+}
+
+footer a[href*="facebook"]::before{
+    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/F_icon.svg") no-repeat;
+    background-size: var(--socialMediaIconSize);
+}
+footer a[href*="xing"]::before{
+    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/XING.svg") no-repeat;
+    background-size: var(--socialMediaIconSize);
+}
+footer a[href*="twitter"]::before{
+    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/Twitter.svg") no-repeat;
+    background-size: var(--socialMediaIconSize);
+}
+footer a[href*="github"]::before{
+    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/GitHub.svg") no-repeat;
+    background-size: var(--socialMediaIconSize);
+}
+footer a[href*="vimeo"]::before{
+    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/Vimeo.svg") no-repeat;
+    background-size: var(--socialMediaIconSize);
+}
+footer a[href*="facebook"]{
+    visibility: hidden;
+}
+footer a{
+    color: black;
+}
+
+footer{
+    background-color: #083167;
+}
+
+
+footer li{
+    display: inline;
+    padding: 10px 25px 10px 0px;
+}
+
+#footernav ul{
+    margin-bottom: auto;
+    padding: 20px 0px;
+}
+
+#socialMedia {
+    padding-top: 20px;
+}
+
+#socialMedia img{
+    padding-right: 20px;
+    padding-bottom: 20px;
+    height: 70px;
+}
+
+.bootstrap-button{
+    margin-top: -20px;
+}
