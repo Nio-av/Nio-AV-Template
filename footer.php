@@ -11,10 +11,9 @@
     <div class="centeredContent">
 
 
-        <div id="socialMedia">
-            blablub
+        <div class="socialMedia">
             <?php wp_nav_menu( array('theme_location' => 'socialMenu' )); ?>
-            
+
         </div>
 
         <nav id="footernav">
