@@ -1,3 +1,6 @@
+footer{
+  margin-top: calc(var(--socialMediaIconSize)/2);
+}
 
 footer .socialMedia a::before{
     content: "";
@@ -29,7 +32,7 @@ footer a[href*="doodle"]::before{
 
 footer .socialMedia a::before{
   background-size: var(--socialMediaIconSize);
-  margin-right: calc(var(--socialMediaIconSize)/4);
+  margin-right: calc(var(--socialMediaIconSize)/3);
 }
 
 footer .socialMedia a{
@@ -44,6 +47,7 @@ footer ul{
 
 footer #footernav ul li{
   display: inline;
+  margin-right: calc(var(--socialMediaIconSize)/3);
 }
 
 
