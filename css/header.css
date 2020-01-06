@@ -38,7 +38,7 @@ header{
     font-family: 'Ubuntu', sans-serif;
 }
 
-nav{
+header nav{
     grid-row: 2;
     grid-column: span 12;
     position: fixed;
@@ -72,13 +72,13 @@ nav{
 }
 
 @media(max-width: 768px) {
-    nav{
+    header nav{
         background-color: var(--secondaryDecorationColor);
     }
 }
 
 @media(min-width: 768px) {
-    nav{
+    header nav{
         margin-top: var(--mainMargin);
         border-style: solid none;
         border-width: 0.5px;

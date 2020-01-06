@@ -3,7 +3,7 @@
 <head>
     <title>
         <?php
-        wp_title();
+        wp_title($sep = '');
         if (is_front_page() == false) {
             echo " - ";
         }
@@ -40,7 +40,15 @@
 
     <h1 id="posttitel">
         <div class="fitty verticalCenter">
-            <?php the_title(); ?>
+            <?php
+
+            if(is_page() ){
+              the_title();
+            } else{
+              wp_title($sep = '');
+            }
+
+            ?>
         </div>
     </h1>
 
@@ -68,11 +76,11 @@
 
     <script>
         fitty('.fitty', {
-            maxSize: 150
+            maxSize: 100
         });
     </script>
 
-</header>
+
 
 <nav class="navbar navbar-expand-md navbar-light sticky-top centeredContent blur" role="navigation">
     <div class="container">
@@ -99,3 +107,5 @@
         ?>
     </div>
 </nav>
+
+</header>
