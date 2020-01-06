@@ -104,7 +104,14 @@
             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
             'walker'          => new WP_Bootstrap_Navwalker(),
         ) );
+
+        if(is_singular( 'post' ) ){
+          echo "<time class='desktoponly'>";
+          echo get_the_date();
+          echo "</time>";
+        }
         ?>
+
     </div>
 </nav>
 
