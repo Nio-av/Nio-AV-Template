@@ -55,6 +55,7 @@ img:hover{
     margin-right: auto;
     width: 80vw;
     max-width: 1000px;
+    hyphens: auto;
 }
 
 /* responsive */
