@@ -13,6 +13,19 @@
 
 }
 
+#postinformation nav{
+  text-align: justify;
+}
+
+#postinformation nav:after{
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+#postinformation nav a{
+  display: inline-block;
+}
 
 .centerChilds > a{
     color: var(--secondaryLinkColor);
