@@ -144,8 +144,9 @@ function IsACategorySelected(  ){
                   }
 
                   $currentCategory = get_category( get_query_var( 'cat' ) )->term_id;
+                  $postsInCategorySubcategory = get_term_post_count( 'category', $currentCategory);
 
-                  echo "Category Counter: " . get_term_post_count( 'category', $currentCategory);
+                  echo "Category Counter: " . $postsInCategorySubcategory;
                   echo "<br>";
                   echo "current_category: " . get_category( get_query_var( 'cat' ) )->term_id;
 
@@ -174,6 +175,7 @@ function IsACategorySelected(  ){
                                     echo ' active';
                                 }
                                 echo '"> ';
+                                echo '<progress value="' .$category->count . '" max="' . $postsInCategorySubcategory . '"></progress>';
                                 echo '<span class="badge">' . $category->count . '</span>';
                                 echo '<h4 class="list-group-item-heading">';
                                 echo  $category->name . '</h4>' ;
