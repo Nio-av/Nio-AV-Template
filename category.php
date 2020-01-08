@@ -205,6 +205,7 @@ function IsACategorySelected(  ){
                 }
             ?>
 
+
             <!-- ggf. Link zur seite vorherige Beiträge -->
             <?php previous_posts_link(); ?>
 
@@ -213,10 +214,35 @@ function IsACategorySelected(  ){
 
                 <article class="window post">
                     <section>
-                        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                        <?php the_excerpt() ?>
 
-                        <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
+                        <?php
+                        $categorysOfPost = get_the_category();
+                        foreach ( $categorysOfPost as $categoryOfPost) {
+
+
+                          echo $categoryOfPost->term_id . ' ';
+                          //Posts nur dann ausgeben, wenn sie auch tatsächlich in der entsprechenden Kategorie sind
+                          if($categoryOfPost->term_id == get_category( get_query_var( 'cat' ) )->term_id ){
+                              //echo '<h2><a href="' . the_permalink() . '">' . the_title() . '</a></h2>';
+
+                              ?>
+                              <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                              <?php the_excerpt(); ?>
+                               <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
+
+                               <?php
+
+                              //the_excerpt();
+
+                              //echo '<a href="' . the_permalink() . '"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>';
+                          }
+                          // code...
+                        }
+                        ?>
+
+
+
+
                     </section>
                 </article>
 
