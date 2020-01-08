@@ -36,7 +36,7 @@
 
 </head>
 <body>
-<header class="grid centeredContent">
+<header class="grid blur sticky centeredContent">
 
     <h1 id="posttitel">
         <div class="fitty verticalCenter">

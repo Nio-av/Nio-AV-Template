@@ -14,7 +14,7 @@
     --mainLinkColor: #0056b3;
     --secondaryLinkColor: darkblue;
     --mainDecorationColor: darkgray;
-    --secondaryDecorationColor: #f8f9fa;
+    --secondaryDecorationColor: rgba(205,205,205, 0.3);
     --mainMargin: 1em;
     --secondaryMargin: calc(var(--mainMargin) / 2);
     --socialMediaIconSize: 50px;
