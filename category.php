@@ -61,10 +61,8 @@ function IsACategorySelected(  ){
         // Button: GoBack
         if(IsACategorySelected() == true && $queried->category_parent){
             echo '<div class="center">';
-            echo '<a href="/?cat=' . get_category( get_query_var( 'cat' ) )->category_parent;
-            if( get_category( get_query_var( 'cat' ) )->category_parent == 0){
-                echo '#catnav-anchor';
-            }
+            echo '<a href="../';
+
             echo '" id="back-Nav">';
             echo '<span class="glyphicon glyphicon-chevron-left"></span>';
             echo '<p class="rotate">Zurück</p>';
@@ -98,6 +96,25 @@ function IsACategorySelected(  ){
 
                  <?php
 
+                 function count_cat_post($category) {
+                      if(is_string($category)) {
+                          $catID = get_cat_ID($category);
+                      }
+                      elseif(is_numeric($category)) {
+                          $catID = $category;
+                      } else {
+                          return 0;
+                      }
+                      $cat = get_category($catID);
+                      return $cat->count;
+                  }
+
+                  $currentCategory = get_category( get_query_var( 'cat' ) )->term_id;
+
+                  echo "Category Counter: " . count_cat_post($currentCategory);
+                  echo "<br>";
+                  echo "current_category: " . get_category( get_query_var( 'cat' ) )->term_id;
+
                     foreach ( $categories as $category ) {
                         if ($thisTrueCat->term_id == $category->term_id) {
                             /* Link to Parent-Category */
@@ -107,6 +124,8 @@ function IsACategorySelected(  ){
 
                             /* Category Selector */
                             $thisTrueCat = get_category( get_query_var( 'cat' ) );
+
+
 
                             $args = array(
                                 'orderby'       => 'count',
