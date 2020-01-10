@@ -143,7 +143,7 @@ function IsACategorySelected(  ){
                       return $q->found_posts;
                   }
 
-                  $currentCategory = get_category( get_query_var( 'cat' ) )->term_id;
+                  //$currentCategory = get_category( get_query_var( 'cat' ) )->term_id;
                   $postsInCategorySubcategory = get_term_post_count( 'category', $currentCategory);
 
                   echo "Category Counter: " . $postsInCategorySubcategory;
@@ -166,7 +166,7 @@ function IsACategorySelected(  ){
                                 'orderby'       => 'count',
                                 'order'         => 'desc',
                                 'hide_empty'    => 0,
-                                'child_of'           => $thisTrueCat->term_id,
+                                'child_of'      => $thisTrueCat->term_id,
                               );
                             $categories = get_categories( $args );
                             foreach ( $categories as $category ) {
@@ -210,49 +210,48 @@ function IsACategorySelected(  ){
             <?php previous_posts_link(); ?>
 
                 <!-- die Beiträge ausgeben -->
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php
+                $currentCategory = get_category( get_query_var( 'cat' ), false )->term_id;
+                $postsInCategory = new WP_Query( array( 'category__in' => $currentCategory ) );
+                echo "posts with new loop";
+                while ( $postsInCategory->have_posts() ) {
 
-                <article class="window post">
-                    <section>
-
-                        <?php
-                        $categorysOfPost = get_the_category();
-                        foreach ( $categorysOfPost as $categoryOfPost) {
+                    $postsInCategory->the_post();
 
 
-                          echo $categoryOfPost->term_id . ' ';
-                          //Posts nur dann ausgeben, wenn sie auch tatsächlich in der entsprechenden Kategorie sind
-                          if($categoryOfPost->term_id == get_category( get_query_var( 'cat' ) )->term_id ){
-                              //echo '<h2><a href="' . the_permalink() . '">' . the_title() . '</a></h2>';
 
-                              ?>
-                              <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                              <?php the_excerpt(); ?>
-                               <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
+                    ?>
+                    <div>
+                    <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                    <?php the_excerpt(); ?>
+                     <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
+                   </div>
 
-                               <?php
+                     <?php
 
-                              //the_excerpt();
 
-                              //echo '<a href="' . the_permalink() . '"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>';
-                          }
-                          // code...
-                        }
-                        ?>
+
+                    //echo '<li>' . get_the_title() . '</li>';
+                    //the_permalink();
+
+
+                }
+                echo "<b>end posts in loop</b>";
 
 
 
 
-                    </section>
-                </article>
 
-                <?php endwhile; endif;
+
+
 
             //ggf. Link Weitere Postings
 
 
             // <!-- verhindern von ineinanderlaufenden text -->
             echo '<div class="clear"></div>';
+
+            //TODO: next link does not work
             next_posts_link();
             // echo '#catnav-anchor';
 
