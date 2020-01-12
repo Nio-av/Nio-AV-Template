@@ -3,22 +3,25 @@
   margin-bottom: 1em;
 }
 
+.process{
+  grid-column: 7;
+  background-color: #5b5f60;
+  color: white;
+  width: 100%;
+  height: 2em;
+  padding-left: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
 .processbar{
   background-color: yellow;
   height: 2em;
   display: inline-flex;
-  width: 200px;
+  width: 100%;
+  grid-column: 8 / span 5;
 }
 
-.processbar>.process{
-  background-color: red;
-  width: 3em;
-  height: 100%;
-  font-size: 2  em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .processbar>.bar{
   background-color: pink;
   width: 10%;
@@ -27,6 +30,22 @@
 }
 
 
+
 #child-category-selector h3{
-  display: inline;
+  display: grid;
+  grid-row: 1;
+  grid-column: span 6;
+  max-width: 100%;
+}
+
+#child-category-selector > a{
+  display: grid;
+  margin-bottom: 4em;
+  background-color: var(--secondaryDecorationColor);
+}
+
+
+.categoryDescription{
+  grid-row: 2;
+  grid-column: span 12;
 }
