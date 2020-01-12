@@ -52,7 +52,8 @@ footer #footernav ul li{
 
 
 footer .socialMedia li{
-    display: initial;
+    display: inline-block;
+    width: calc(var(--socialMediaIconSize)*1.25);
     padding: 10px 25px 10px 0px;
 }
 
