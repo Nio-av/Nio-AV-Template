@@ -1,0 +1,4 @@
+#postsInCategory > article{
+  background-color: var(--secondaryDecorationColor);
+  margin-bottom: 1em;
+}

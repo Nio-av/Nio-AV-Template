@@ -1,51 +1,28 @@
 <?php get_header(); ?>
-<main>
+<main class="centeredContent">
 
 <?php
 function IsACategorySelected(  ){
     foreach ( get_categories( ) as $category ) {
         if( get_category( get_query_var( 'cat' ) ) ->term_id == $category->term_id){
             return true;
+        } else{
+          return false;
         }
     }
 }
+
+
+$thisTrueCat = get_category( get_query_var( 'cat' ) );
+
+
+$args = array(
+    'orderby'       => 'name',
+    'hide_empty'    => 1,
+    'parent'        => 0,
+  );
+$categories = get_categories( $args );
 ?>
-
-
-<!-- Kategorien als breites Menü anzeigen -->
-<div id="category-Background">
-    <a name="catnav-anchor"></a>
-    <nav id="category" class="center">
-
-        <div class="btn-group btn-group-justified" role="group">
-
-        <?php
-
-            $thisTrueCat = get_category( get_query_var( 'cat' ) );
-
-
-            $args = array(
-                'orderby'       => 'name',
-                'hide_empty'    => 1,
-                'parent'        => 0,
-              );
-            $categories = get_categories( $args );
-            foreach ( $categories as $category ) { ?>
-                <a class="btn btn-info
-                <?php if ($thisTrueCat->term_id == $category->term_id) { ?> active<?php } ?>
-                " role="button"
-                <?php
-                echo $category->current_category  . '" href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a>';
-            }
-        ?>
-
-
-        </div>
-
-
-
-    </nav>
-</div>
 
 
 
@@ -59,7 +36,7 @@ function IsACategorySelected(  ){
     $queried = $wp_query->get_queried_object();
     //echo 'parent: ' . category_has_parent($tid);
         // Button: GoBack
-        if(IsACategorySelected() == true && $queried->category_parent){
+        if(IsACategorySelected() == false && $queried->category_parent){
             echo '<div class="center">';
             echo '<a href="../';
 
@@ -201,7 +178,7 @@ function IsACategorySelected(  ){
 
             <?php
                 wp_reset_query();
-                if(IsACategorySelected() == true){
+                if(IsACategorySelected() != false){
                     echo '<div id="AllPostings">';
                 }
             ?>
@@ -215,6 +192,9 @@ function IsACategorySelected(  ){
             <?php previous_posts_link(); ?>
 
                 <!-- die Beiträge ausgeben -->
+
+
+
 
 
                 <?php
@@ -233,7 +213,7 @@ function IsACategorySelected(  ){
 
 
 
-
+                <div id="postsInCategory">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                 <article class="window post">
@@ -245,7 +225,11 @@ function IsACategorySelected(  ){
                     </section>
                 </article>
 
-                <?php endwhile; endif;
+              <?php endwhile; endif; ?>
+
+                </div>
+
+            <?php
 
             //ggf. Link Weitere Postings
 
@@ -255,7 +239,7 @@ function IsACategorySelected(  ){
             next_posts_link();
             // echo '#catnav-anchor';
 
-            if(IsACategorySelected() == true){
+            if(IsACategorySelected() != false){
                 echo '</div>'; //close AllPostings
             }
             ?>
