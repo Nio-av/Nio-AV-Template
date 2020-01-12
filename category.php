@@ -143,7 +143,7 @@ function IsACategorySelected(  ){
                       return $q->found_posts;
                   }
 
-                  //$currentCategory = get_category( get_query_var( 'cat' ) )->term_id;
+                  $currentCategory = get_category( get_query_var( 'cat' ) )->term_id;
                   $postsInCategorySubcategory = get_term_post_count( 'category', $currentCategory);
 
                   echo "Category Counter: " . $postsInCategorySubcategory;
@@ -166,7 +166,7 @@ function IsACategorySelected(  ){
                                 'orderby'       => 'count',
                                 'order'         => 'desc',
                                 'hide_empty'    => 0,
-                                'child_of'      => $thisTrueCat->term_id,
+                                'child_of'           => $thisTrueCat->term_id,
                               );
                             $categories = get_categories( $args );
                             foreach ( $categories as $category ) {
@@ -200,58 +200,58 @@ function IsACategorySelected(  ){
 
 
             <?php
+                wp_reset_query();
                 if(IsACategorySelected() == true){
                     echo '<div id="AllPostings">';
                 }
             ?>
 
 
+
+
+
+
             <!-- ggf. Link zur seite vorherige Beiträge -->
             <?php previous_posts_link(); ?>
 
                 <!-- die Beiträge ausgeben -->
+
+
                 <?php
-                $currentCategory = get_category( get_query_var( 'cat' ), false )->term_id;
-                $postsInCategory = new WP_Query( array( 'category__in' => $currentCategory ) );
-                echo "posts with new loop";
-                while ( $postsInCategory->have_posts() ) {
 
-                    $postsInCategory->the_post();
+                //custom wp_query
+                $args = array(
+                 'posts_per_page' => -1,
+                 'orderby' => 'title',
+                 'order' => 'ASC',
+                 'category__in' => get_category( get_query_var( 'cat' ) )->term_id
+                );
 
+                $wp_query = new WP_Query($args);
 
-
-                    ?>
-                    <div>
-                    <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                    <?php the_excerpt(); ?>
-                     <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
-                   </div>
-
-                     <?php
-
-
-
-                    //echo '<li>' . get_the_title() . '</li>';
-                    //the_permalink();
-
-
-                }
-                echo "<b>end posts in loop</b>";
+                ?>
 
 
 
 
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+                <article class="window post">
+                    <section>
+                        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                        <?php the_excerpt() ?>
 
+                        <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
+                    </section>
+                </article>
 
+                <?php endwhile; endif;
 
             //ggf. Link Weitere Postings
 
 
             // <!-- verhindern von ineinanderlaufenden text -->
             echo '<div class="clear"></div>';
-
-            //TODO: next link does not work
             next_posts_link();
             // echo '#catnav-anchor';
 
