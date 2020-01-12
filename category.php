@@ -145,7 +145,7 @@ $categories = get_categories( $args );
                                 ?>
                                 <div class="process">
                                   <?php
-                                  echo round($percentageOfPosts , 1) . ' %';
+                                  echo round($percentageOfPosts) . ' %';
                                   ?>
                                 </div>
                                 <div class="processbar">
@@ -153,8 +153,8 @@ $categories = get_categories( $args );
                                 </div>
 
                                 <?php
-                                echo '<progress value="' . $category->count . '" max="' . $postsInCategorySubcategory . '"></progress>';
-                                echo '<span class="badge">' . $category->count . '</span>';
+                                //echo '<progress value="' . $category->count . '" max="' . $postsInCategorySubcategory . '"></progress>';
+                                //echo '<span class="badge">' . $category->count . '</span>';
                                 echo '<p class="categoryDescription">' . $category->description . '</p>';
 
                                 echo '</a>';
