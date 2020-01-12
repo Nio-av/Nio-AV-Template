@@ -78,7 +78,11 @@ header nav{
     backdrop-filter: blur(7px);
 }
 
-
+@supports not (backdrop-filter: blur(7px))  {
+  header.blur{
+      background-color: rgba(255,255,255, 0.9)!important;
+  }
+}
 
 header.blur{
   background-color: rgba(255,255,255, 0.5);
