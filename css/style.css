@@ -17,6 +17,7 @@
     --secondaryDecorationColor: rgba(205,205,205, 0.3);
     --mainMargin: 1em;
     --secondaryMargin: calc(var(--mainMargin) / 2);
+    --processbar: #5b5f60;
     --socialMediaIconSize: 50px;
     --socialMediaIconPath: "/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/";
 }

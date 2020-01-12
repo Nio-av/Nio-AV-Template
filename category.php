@@ -149,7 +149,7 @@ $categories = get_categories( $args );
                                   ?>
                                 </div>
                                 <div class="processbar">
-                                  <div class="bar"></div>
+                                  <div class="bar" style="width:<?php echo $percentageOfPosts ?>%"></div>
                                 </div>
 
                                 <?php
