@@ -13,7 +13,7 @@ function IsACategorySelected(  ){
 }
 
 
-$thisTrueCat = get_category( get_query_var( 'cat' ) );
+$thisTrueCat = get_category( get_query_var( 'cat' ) )->term_id;
 
 
 $args = array(
@@ -37,14 +37,9 @@ $categories = get_categories( $args );
     //echo 'parent: ' . category_has_parent($tid);
         // Button: GoBack
         if(IsACategorySelected() == false && $queried->category_parent){
-            echo '<div class="center">';
-            echo '<a href="../';
-
-            echo '" id="back-Nav">';
-            echo '<span class="glyphicon glyphicon-chevron-left"></span>';
-            echo '<p class="rotate">Zurück</p>';
+            echo '<a href="../" >';
+            echo '<p>Zurück</p>';
             echo '</a>';
-            echo '</div>';
         }
     ?>
     <!-- open subcategory Selector -->
@@ -58,7 +53,7 @@ $categories = get_categories( $args );
                         'hide_empty'         => 0,
                         'category_description' => 0,
                         'title_li'           => __( '' ),
-                        'child_of'           => $thisTrueCat->term_id,
+                        'child_of'           => $thisTrueCat,
                     );
 
 
@@ -120,22 +115,19 @@ $categories = get_categories( $args );
                       return $q->found_posts;
                   }
 
-                  $currentCategory = get_category( get_query_var( 'cat' ) )->term_id;
-                  $postsInCategorySubcategory = get_term_post_count( 'category', $currentCategory);
+
+                  $postsInCategorySubcategory = get_term_post_count( 'category', $thisTrueCat);
 
                   echo "Category Counter: " . $postsInCategorySubcategory;
                   echo "<br>";
                   echo "current_category: " . get_category( get_query_var( 'cat' ) )->term_id;
 
                     foreach ( $categories as $category ) {
-                        if ($thisTrueCat->term_id == $category->term_id) {
+                        if ($thisTrueCat == $category->term_id) {
                             /* Link to Parent-Category */
 
-                            echo '<div id="child-category-selector" class="list-group">';
+                            echo '<div id="child-category-selector">';
 
-
-                            /* Category Selector */
-                            $thisTrueCat = get_category( get_query_var( 'cat' ) );
 
 
 
@@ -143,19 +135,22 @@ $categories = get_categories( $args );
                                 'orderby'       => 'count',
                                 'order'         => 'desc',
                                 'hide_empty'    => 0,
-                                'child_of'           => $thisTrueCat->term_id,
+                                'child_of'           => $thisTrueCat,
                               );
                             $categories = get_categories( $args );
                             foreach ( $categories as $category ) {
-                                echo '<a href="' . get_category_link( $category->term_id ) . '" class="list-group-item';
-                                if ($thisTrueCat->term_id == $category->term_id) {
-                                    echo ' active';
-                                }
-                                echo '"> ';
+                                echo '<a href="' . get_category_link( $category->term_id ) . '">';
+                                echo '<h3 class="list-group-item-heading">' . $category->name . '</h3>' ;
+                                ?>
+
+                                <div class="processbar">
+                                  <div class="process">20 %</div>
+                                  <div class="bar"></div>
+                                </div>
+
+                                <?php
                                 echo '<progress value="' .$category->count . '" max="' . $postsInCategorySubcategory . '"></progress>';
                                 echo '<span class="badge">' . $category->count . '</span>';
-                                echo '<h4 class="list-group-item-heading">';
-                                echo  $category->name . '</h4>' ;
                                 echo '<p class="list-group-item-text">' . $category->description . '</p>';
 
                                 echo '</a>';
