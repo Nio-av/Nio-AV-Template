@@ -13,13 +13,8 @@
 
 }
 
-#postinformation nav{
-  text-align: justify;
-}
-
 #postinformation nav:after{
   content: "";
-  display: inline-block;
   width: 100%;
 }
 
