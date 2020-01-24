@@ -22,6 +22,10 @@
   grid-column: 8 / span 5;
 }
 
+a:hover .processbar{
+  background-color: var(--secondaryDecorationColor);
+}
+
 @media(max-width: 768px){
     .process{
         grid-column: 1 / span 2;
