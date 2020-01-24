@@ -2,18 +2,19 @@
 <main class="centeredContent">
 
 <?php
-function IsACategorySelected(  ){
-    foreach ( get_categories( ) as $category ) {
-        if( get_category( get_query_var( 'cat' ) ) ->term_id == $category->term_id){
+function IsACategorySelected()
+{
+    foreach (get_categories() as $category) {
+        if (get_category(get_query_var('cat')) ->term_id == $category->term_id) {
             return true;
-        } else{
-          return false;
+        } else {
+            return false;
         }
     }
 }
 
 
-$thisTrueCat = get_category( get_query_var( 'cat' ) )->term_id;
+$thisTrueCat = get_category(get_query_var('cat'))->term_id;
 
 
 $args = array(
@@ -21,7 +22,7 @@ $args = array(
     'hide_empty'    => 1,
     'parent'        => 0,
   );
-$categories = get_categories( $args );
+$categories = get_categories($args);
 ?>
 
 
@@ -36,7 +37,7 @@ $categories = get_categories( $args );
     $queried = $wp_query->get_queried_object();
     //echo 'parent: ' . category_has_parent($tid);
         // Button: GoBack
-        if(IsACategorySelected() == false && $queried->category_parent){
+        if (IsACategorySelected() == false && $queried->category_parent) {
             echo '<a href="../" >';
             echo '<p>Zurück</p>';
             echo '</a>';
@@ -57,63 +58,66 @@ $categories = get_categories( $args );
 
                  <?php
                  if (category_description($category_id)) {
-                    echo "<h4>Beschreibung</h3>";
-                    echo category_description($category_id);
-                }
+                     echo "<h4>Beschreibung</h3>";
+                     echo category_description($category_id);
+                 }
 
-                 function get_term_post_count( $taxonomy = 'category', $term = '', $args = [] )
-                  {
-                      // Lets first validate and sanitize our parameters, on failure, just return false
-                      if ( !$term )
-                          return false;
+                 function get_term_post_count($taxonomy = 'category', $term = '', $args = [])
+                 {
+                     // Lets first validate and sanitize our parameters, on failure, just return false
+                     if (!$term) {
+                         return false;
+                     }
 
-                      if ( $term !== 'all' ) {
-                          if ( !is_array( $term ) ) {
-                              $term = filter_var(       $term, FILTER_VALIDATE_INT );
-                          } else {
-                              $term = filter_var_array( $term, FILTER_VALIDATE_INT );
-                          }
-                      }
+                     if ($term !== 'all') {
+                         if (!is_array($term)) {
+                             $term = filter_var($term, FILTER_VALIDATE_INT);
+                         } else {
+                             $term = filter_var_array($term, FILTER_VALIDATE_INT);
+                         }
+                     }
 
-                      if ( $taxonomy !== 'category' ) {
-                          $taxonomy = filter_var( $taxonomy, FILTER_SANITIZE_STRING );
-                          if ( !taxonomy_exists( $taxonomy ) )
-                              return false;
-                      }
+                     if ($taxonomy !== 'category') {
+                         $taxonomy = filter_var($taxonomy, FILTER_SANITIZE_STRING);
+                         if (!taxonomy_exists($taxonomy)) {
+                             return false;
+                         }
+                     }
 
-                      if ( $args ) {
-                          if ( !is_array )
-                              return false;
-                      }
+                     if ($args) {
+                         if (!is_array) {
+                             return false;
+                         }
+                     }
 
-                      // Now that we have come this far, lets continue and wrap it up
-                      // Set our default args
-                      $defaults = [
+                     // Now that we have come this far, lets continue and wrap it up
+                     // Set our default args
+                     $defaults = [
                           'posts_per_page' => 1,
                           'fields'         => 'ids'
                       ];
 
-                      if ( $term !== 'all' ) {
-                          $defaults['tax_query'] = [
+                     if ($term !== 'all') {
+                         $defaults['tax_query'] = [
                               [
                                   'taxonomy' => $taxonomy,
                                   'terms'    => $term
                               ]
                           ];
-                      }
-                      $combined_args = wp_parse_args( $args, $defaults );
-                      $q = new WP_Query( $combined_args );
+                     }
+                     $combined_args = wp_parse_args($args, $defaults);
+                     $q = new WP_Query($combined_args);
 
-                      // Return the post count
-                      return $q->found_posts;
-                  }
+                     // Return the post count
+                     return $q->found_posts;
+                 }
 
 
-                  $postsInCategorySubcategory = get_term_post_count( 'category', $thisTrueCat);
+                  $postsInCategorySubcategory = get_term_post_count('category', $thisTrueCat);
 
                   echo "<span>Category Counter: " . $postsInCategorySubcategory . "</span>";
 
-                    foreach ( $categories as $category ) {
+                    foreach ($categories as $category) {
                         if ($thisTrueCat == $category->term_id) {
                             /* Link to Parent-Category */
 
@@ -128,16 +132,14 @@ $categories = get_categories( $args );
                                 'hide_empty'    => 0,
                                 'child_of'           => $thisTrueCat,
                               );
-                            $categories = get_categories( $args );
-                            foreach ( $categories as $category ) {
-                                echo '<a href="' . get_category_link( $category->term_id ) . '" class="grid">';
+                            $categories = get_categories($args);
+                            foreach ($categories as $category) {
+                                echo '<a href="' . get_category_link($category->term_id) . '" class="grid">';
                                 echo '<h3 class="list-group-item-heading">' . $category->name . '</h3>' ;
-                                $percentageOfPosts =   (($category->count) / $postsInCategorySubcategory) * 100;
-                                ?>
+                                $percentageOfPosts =   (($category->count) / $postsInCategorySubcategory) * 100; ?>
                                 <div class="process">
                                   <?php
-                                  echo round($percentageOfPosts) . ' %';
-                                  ?>
+                                  echo round($percentageOfPosts) . ' %'; ?>
                                 </div>
                                 <div class="processbar">
                                   <div class="bar" style="width:<?php echo $percentageOfPosts ?>%"></div>
@@ -148,15 +150,12 @@ $categories = get_categories( $args );
                                 //echo '<span class="badge">' . $category->count . '</span>';
                                 echo '<p class="categoryDescription">' . $category->description . '</p>';
 
-                                echo '</a>';
-
-                                ?>
+                                echo '</a>'; ?>
 
 
                                 <?php
                             }
                             echo '</div>';
-
                         }
                     }
                 ?>
@@ -168,7 +167,7 @@ $categories = get_categories( $args );
 
             <?php
                 wp_reset_query();
-                if(IsACategorySelected() != false){
+                if (IsACategorySelected() != false) {
                     echo '<div id="AllPostings">';
                 }
             ?>
@@ -194,7 +193,7 @@ $categories = get_categories( $args );
                  'posts_per_page' => -1,
                  'orderby' => 'date',
                  'order' => 'DESC',
-                 'category__in' => get_category( get_query_var( 'cat' ) )->term_id
+                 'category__in' => get_category(get_query_var('cat'))->term_id
                 );
 
                 $wp_query = new WP_Query($args);
@@ -231,7 +230,7 @@ $categories = get_categories( $args );
             next_posts_link();
             // echo '#catnav-anchor';
 
-            if(IsACategorySelected() != false){
+            if (IsACategorySelected() != false) {
                 echo '</div>'; //close AllPostings
             }
             ?>
