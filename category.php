@@ -201,8 +201,8 @@ $categories = get_categories( $args );
                 //custom wp_query
                 $args = array(
                  'posts_per_page' => -1,
-                 'orderby' => 'title',
-                 'order' => 'ASC',
+                 'orderby' => 'date',
+                 'order' => 'DESC',
                  'category__in' => get_category( get_query_var( 'cat' ) )->term_id
                 );
 
