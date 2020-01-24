@@ -1,10 +1,6 @@
-#postsInCategory > article{
-  background-color: var(--secondaryDecorationColor);
-  margin-bottom: 1em;
-}
-
-#child-category-selector a:hover, #postsInCategory article:hover{
+#child-category-selector a:hover, #postsInCategory a:hover{
   background-color: var(--mainDecorationColor);
+  text-decoration: none;
 }
 
 .process{
@@ -47,7 +43,7 @@
 
 
 
-#child-category-selector h3{
+#child-category-selector h3, #postsInCategory h2{
   display: grid;
   grid-row: 1;
   grid-column: span 6;
@@ -64,7 +60,7 @@
     }
 }
 
-#child-category-selector > a{
+#child-category-selector > a, #postsInCategory a{
   display: grid;
   margin-bottom: 2em;
   background-color: var(--secondaryDecorationColor);
@@ -72,7 +68,7 @@
 }
 
 
-.categoryDescription{
+.categoryDescription, .textexcerpt{
   grid-row: 3;
   grid-column: span 12;
   color: black;

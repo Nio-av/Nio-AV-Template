@@ -215,14 +215,16 @@ $categories = get_categories( $args );
                 <div id="postsInCategory">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <article class="window post">
-                    <section>
-                        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                        <?php the_excerpt() ?>
+                <a href="<?php the_permalink() ?>">
+                    <section class="window post">
+                        <h2><?php the_title(); ?></h2>
+                        <p class="textexcerpt">test
+                          <?php echo get_the_excerpt() ?>
+                        </p>
 
-                        <a href="<?php the_permalink() ?>"><span class="glyphicon glyphicon-chevron-right"></span> weiterlesen</a>
+                        <span>weiterlesen</span>
                     </section>
-                </article>
+                </a>
 
               <?php endwhile; endif; ?>
 
