@@ -46,27 +46,20 @@ $categories = get_categories( $args );
     <div class="post-Background">
         <div class="post center">
             <div id="subcategory-selector">
-                <!--
+
                 <?php
-                    $args = array(
-                        'show_count'         => 1,
-                        'hide_empty'         => 0,
-                        'category_description' => 0,
-                        'title_li'           => __( '' ),
-                        'child_of'           => $thisTrueCat,
-                    );
 
-
-                    wp_list_categories($args);
-                    echo single_cat_title();
-                    echo category_description();
                 ?>
-                -->
+
 
 
 
 
                  <?php
+                 if (category_description($category_id)) {
+                    echo "<h4>Beschreibung</h3>";
+                    echo category_description($category_id);
+                }
 
                  function get_term_post_count( $taxonomy = 'category', $term = '', $args = [] )
                   {
@@ -118,9 +111,7 @@ $categories = get_categories( $args );
 
                   $postsInCategorySubcategory = get_term_post_count( 'category', $thisTrueCat);
 
-                  echo "Category Counter: " . $postsInCategorySubcategory;
-                  echo "<br>";
-                  echo "current_category: " . get_category( get_query_var( 'cat' ) )->term_id;
+                  echo "<span>Category Counter: " . $postsInCategorySubcategory . "</span>";
 
                     foreach ( $categories as $category ) {
                         if ($thisTrueCat == $category->term_id) {
