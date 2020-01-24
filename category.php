@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="centeredContent">
+<main class="centeredContent grid">
 
 <?php
 function IsACategorySelected()
@@ -38,15 +38,12 @@ $categories = get_categories($args);
     //echo 'parent: ' . category_has_parent($tid);
         // Button: GoBack
         if (IsACategorySelected() == false && $queried->category_parent) {
-            echo '<a href="../" >';
-            echo '<p>Zurück</p>';
-            echo '</a>';
+            echo '<a href="../">Zurück</a>';
         }
     ?>
     <!-- open subcategory Selector -->
-    <div class="post-Background">
-        <div class="post center">
-            <div id="subcategory-selector">
+
+
 
                 <?php
 
@@ -134,15 +131,17 @@ $categories = get_categories($args);
                               );
                             $categories = get_categories($args);
                             foreach ($categories as $category) {
-                                echo '<a href="' . get_category_link($category->term_id) . '" class="grid">';
-                                echo '<h3 class="list-group-item-heading">' . $category->name . '</h3>' ;
+                                echo '<a class="grid" href="' . get_category_link($category->term_id) . '">';
+                                echo '<h3>' . $category->name . '</h3>' ;
                                 $percentageOfPosts =   (($category->count) / $postsInCategorySubcategory) * 100; ?>
-                                <div class="process">
-                                  <?php
-                                  echo round($percentageOfPosts) . ' %'; ?>
-                                </div>
-                                <div class="processbar">
-                                  <div class="bar" style="width:<?php echo $percentageOfPosts ?>%"></div>
+                                <div class="processBarContainer">
+                                  <div class="process">
+                                    <?php
+                                    echo round($percentageOfPosts) . ' %'; ?>
+                                  </div>
+                                  <div class="processbar">
+                                    <div class="bar" style="width:<?php echo $percentageOfPosts ?>%"></div>
+                                  </div>
                                 </div>
 
                                 <?php
@@ -159,7 +158,7 @@ $categories = get_categories($args);
                         }
                     }
                 ?>
-            </div> <!-- close subcategory-selector -->
+
 
 
 
@@ -237,8 +236,7 @@ $categories = get_categories($args);
 
 
 
-        </div> <!-- Close Post Center -->
-    </div> <!-- Close Post BAckground -->
+
 
 
 </main>

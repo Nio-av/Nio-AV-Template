@@ -3,6 +3,18 @@
   text-decoration: none;
 }
 
+#postsInCategory, #child-category-selector{
+  grid-column: span 12;
+}
+
+
+
+.processBarContainer{
+  display: inline-flex;
+  grid-column: 8 / span 5;
+}
+
+
 .process {
   grid-column: 7;
   background-color: var(--processbar);
@@ -27,9 +39,8 @@ a:hover .processbar {
 }
 
 @media(max-width: 768px) {
-  .process {
-    grid-column: 1 / span 2;
-    grid-row: 1;
+  .processBarContainer {
+    grid-column: 1 / span 12;
   }
 
   .processbar {
@@ -45,7 +56,6 @@ a:hover .processbar {
 }
 
 #child-category-selector h3, #postsInCategory h2 {
-  display: grid;
   grid-row: 1;
   grid-column: span 6;
   max-width: 100%;
@@ -72,4 +82,10 @@ a:hover .processbar {
   grid-row: 3;
   grid-column: span 12;
   color: black;
+}
+
+
+main a{
+  grid-row: 3;
+  grid-column: span 2;
 }

@@ -19,3 +19,8 @@ main article{
   color: black;
   text-decoration: none;
 }
+
+#subcategorySelector span{
+  grid-column-start: 7;
+  grid-row: 3;
+}
