@@ -132,19 +132,18 @@ $categories = get_categories($args);
                             $categories = get_categories($args);
                             foreach ($categories as $category) {
                                 echo '<a class="grid" href="' . get_category_link($category->term_id) . '">';
-                                echo '<h3>' . $category->name . '</h3>' ;
                                 $percentageOfPosts =   (($category->count) / $postsInCategorySubcategory) * 100; ?>
-                                <div class="processBarContainer">
-                                  <div class="process">
-                                    <?php
-                                    echo round($percentageOfPosts) . ' %'; ?>
-                                  </div>
-                                  <div class="processbar">
-                                    <div class="bar" style="width:<?php echo $percentageOfPosts ?>%"></div>
-                                  </div>
+
+                                <div class="process">
+                                  <?php
+                                  echo round($percentageOfPosts) . ' %'; ?>
+                                </div>
+                                <div class="processbar">
+                                  <div class="bar" style="width:<?php echo $percentageOfPosts ?>%"></div>
                                 </div>
 
                                 <?php
+                                echo '<h3>' . $category->name . '</h3>' ;
                                 //echo '<progress value="' . $category->count . '" max="' . $postsInCategorySubcategory . '"></progress>';
                                 //echo '<span class="badge">' . $category->count . '</span>';
                                 echo '<p class="categoryDescription">' . $category->description . '</p>';
