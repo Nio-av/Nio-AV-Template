@@ -60,9 +60,20 @@ footer .socialMedia li{
     padding: 10px 25px 10px 0px;
 }
 
+/* Fotoer Links */
+footer #footernav{
+  margin-top: var(--mainMargin);
+  border-style: solid none;
+  border-width: 0.5px;
+  border-color: darkgray;
+  margin-bottom: var(--mainMargin);
+}
+
+ /* */
+
 #footernav ul{
     margin-bottom: auto;
-    padding: 20px 0px;
+    padding: var(--secondaryMargin) 0px;
 }
 
 footer .socialMedia {
