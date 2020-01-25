@@ -6,7 +6,10 @@ main article{
   line-height: calc(0.5vw + 1.5em);
 }
 
-#postinformation nav a, button{
+header button{
+  margin: 0em;
+}
+#postinformation nav a, button, .wpcf7-submit{
   background-color: var(--secondaryDecorationColor);
   color: var(--processbar);
   padding: 0.2em 1.2em;
@@ -14,8 +17,11 @@ main article{
   margin: 1em 0em;
   border: none;
 }
+#postinformation nav a{
+  margin: var(--secondaryMargin) 0em;
+}
 
-#postinformation nav a:hover, button:hover{
+#postinformation nav a:hover, button:hover, .wpcf7-submit:hover{
   background-color: var(--mainDecorationColor);
   color: black;
   text-decoration: none;
@@ -24,4 +30,9 @@ main article{
 #subcategorySelector span{
   grid-column-start: 7;
   grid-row: 3;
+}
+
+
+input, textarea{
+  max-width: 90vw;
 }
