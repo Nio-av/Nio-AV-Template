@@ -22,6 +22,10 @@
     --socialMediaIconPath: "/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/";
 }
 
+a{
+  color: var(--mainLinkColor);
+}
+
 
 main{
     font-family: 'Cousine', monospace;

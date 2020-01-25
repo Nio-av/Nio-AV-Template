@@ -6,15 +6,16 @@ main article{
   line-height: calc(0.5vw + 1.5em);
 }
 
-#postinformation nav a{
+#postinformation nav a, button{
   background-color: var(--secondaryDecorationColor);
   color: var(--processbar);
   padding: 0.2em 1.2em;
   border-radius: 0.35em;
   margin: 1em 0em;
+  border: none;
 }
 
-#postinformation nav a:hover{
+#postinformation nav a:hover, button:hover{
   background-color: var(--mainDecorationColor);
   color: black;
   text-decoration: none;
