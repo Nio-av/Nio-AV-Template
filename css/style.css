@@ -26,6 +26,9 @@ a{
   color: var(--mainLinkColor);
 }
 
+*{
+  max-width: 100vw;
+}
 
 main{
     font-family: 'Cousine', monospace;
