@@ -12,22 +12,22 @@ footer .socialMedia a::before{
 }
 
 footer a[href*="facebook"]::before{
-    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/F_icon.svg") no-repeat;
+    background: url("/wp-content/themes/Nio-AV-v3/PlugIns/SocialMediaIcons/F_icon.svg") no-repeat;
 }
 footer a[href*="xing"]::before{
-    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/XING.svg") no-repeat;
+    background: url("/wp-content/themes/Nio-AV-v3/PlugIns/SocialMediaIcons/XING.svg") no-repeat;
 }
 footer a[href*="twitter"]::before{
-    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/Twitter.svg") no-repeat;
+    background: url("/wp-content/themes/Nio-AV-v3/PlugIns/SocialMediaIcons/Twitter.svg") no-repeat;
 }
 footer a[href*="github"]::before{
-    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/GitHub.svg") no-repeat;
+    background: url("/wp-content/themes/Nio-AV-v3/PlugIns/SocialMediaIcons/GitHub.svg") no-repeat;
 }
 footer a[href*="vimeo"]::before{
-    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/Vimeo.svg") no-repeat;
+    background: url("/wp-content/themes/Nio-AV-v3/PlugIns/SocialMediaIcons/Vimeo.svg") no-repeat;
 }
 footer a[href*="linkedin"]::before{
-    background: url("/wp-content/themes/Nio-AV-Template/PlugIns/SocialMediaIcons/LinkedIn_Logo.svg") no-repeat;
+    background: url("/wp-content/themes/Nio-AV-v3/PlugIns/SocialMediaIcons/LinkedIn_Logo.svg") no-repeat;
 }
 footer a[href*="doodle"]::before{
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjAgMjBoLTR2LTRoNHY0em0tNi0xMGgtNHY0aDR2LTR6bTYgMGgtNHY0aDR2LTR6bS0xMiA2aC00djRoNHYtNHptNiAwaC00djRoNHYtNHptLTYtNmgtNHY0aDR2LTR6bTE2LTh2MjJoLTI0di0yMmgzdjFjMCAxLjEwMy44OTcgMiAyIDJzMi0uODk3IDItMnYtMWgxMHYxYzAgMS4xMDMuODk3IDIgMiAyczItLjg5NyAyLTJ2LTFoM3ptLTIgNmgtMjB2MTRoMjB2LTE0em0tMi03YzAtLjU1Mi0uNDQ3LTEtMS0xcy0xIC40NDgtMSAxdjJjMCAuNTUyLjQ0NyAxIDEgMXMxLS40NDggMS0xdi0yem0tMTQgMmMwIC41NTItLjQ0NyAxLTEgMXMtMS0uNDQ4LTEtMXYtMmMwLS41NTIuNDQ3LTEgMS0xczEgLjQ0OCAxIDF2MnoiLz48L3N2Zz4=");
