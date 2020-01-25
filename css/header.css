@@ -44,6 +44,7 @@
 header{
     margin-top: var(--mainMargin);
     font-family: 'Ubuntu', sans-serif;
+    z-index: 1;
 }
 
 header nav{
