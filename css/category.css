@@ -35,6 +35,10 @@ p.categoryDescription{
 .processBarContainer{
   grid-column: 8 / span 5;
 }
+.percentageInformation{
+  padding: calc(2 * var(--mainMargin)) 0;
+  display: block;
+}
 
 
 .process {

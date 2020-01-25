@@ -111,6 +111,7 @@ $categories = get_categories($args);
                             /* Link to Parent-Category */
 
                             echo '<div id="child-category-selector">';
+                            echo '<span class="percentageInformation">Die bisher von mir realisierten Projekte verteilen sich wie folgt in den entsprechenden Bereichen:</span>';
 
 
 
@@ -123,8 +124,9 @@ $categories = get_categories($args);
                               );
                             $categories = get_categories($args);
                             foreach ($categories as $category) {
-                                echo '<a class="grid" href="' . get_category_link($category->term_id) . '">';
-                                $percentageOfPosts =   (($category->count) / $postsInCategorySubcategory) * 100; ?>
+                                $percentageOfPosts =   (($category->count) / $postsInCategorySubcategory) * 100;
+                                echo '<a class="grid" title="'. round($percentageOfPosts) .'% der Beiträge sind der Kategorie »' . $category->name . '« zugeordnet." href="' . get_category_link($category->term_id) . '">';
+                                 ?>
 
                                 <div class="process">
                                   <?php
