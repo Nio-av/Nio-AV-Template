@@ -200,7 +200,7 @@ $categories = get_categories($args);
                 <a href="<?php the_permalink() ?>">
                     <section class="window post">
                         <h2><?php the_title(); ?></h2>
-                        <p class="textexcerpt">test
+                        <p class="textexcerpt">
                           <?php echo get_the_excerpt() ?>
                         </p>
 
