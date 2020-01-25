@@ -3,10 +3,33 @@
   text-decoration: none;
 }
 
+#postsInCategory{
+  grid-row: 6;
+}
+
+#child-category-selector{
+  grid-row: 5;
+  margin-bottom: calc(var(--mainMargin) * 4);
+}
+
 #postsInCategory, #child-category-selector{
   grid-column: span 12;
 }
 
+.counter{
+  grid-row: 4;
+}
+.counterDecription{
+  grid-column: span 3;
+}
+
+h4.categoryDescription{
+  grid-column: span 3;
+  grid-row: 3;
+}
+p.categoryDescription{
+  grid-row: 3;
+}
 
 
 .processBarContainer{
@@ -83,8 +106,13 @@ a:hover .processbar {
   color: black;
 }
 
+.back{
+  grid-row: 5;
+  margin-bottom: var(--mainMargin);
+}
+
 
 main a{
-  grid-row: 3;
+  grid-row: 6;
   grid-column: span 2;
 }

@@ -13,6 +13,14 @@ function IsACategorySelected()
     }
 }
 
+$queried = $wp_query->get_queried_object();
+//echo 'parent: ' . category_has_parent($tid);
+// Button: GoBack
+if (IsACategorySelected() == false && $queried->category_parent) {
+    echo '<a class="back" href="../">Zurück</a>';
+}
+
+
 
 $thisTrueCat = get_category(get_query_var('cat'))->term_id;
 
@@ -28,35 +36,19 @@ $categories = get_categories($args);
 
 
 
-
-
-
 <!-- eine einfache Navigation innerhalb der unterkategorien -->
     <!-- GoBack-Button -->
     <?php
-    $queried = $wp_query->get_queried_object();
-    //echo 'parent: ' . category_has_parent($tid);
-        // Button: GoBack
-        if (IsACategorySelected() == false && $queried->category_parent) {
-            echo '<a href="../">Zurück</a>';
-        }
-    ?>
-    <!-- open subcategory Selector -->
+
+
+    // <!-- open subcategory Selector -->
 
 
 
-                <?php
-
-                ?>
-
-
-
-
-
-                 <?php
                  if (category_description($category_id)) {
-                     echo "<h4>Beschreibung</h3>";
-                     echo category_description($category_id);
+                     echo "<h4 class='categoryDescription'>Beschreibung</h3>";
+                     remove_filter('term_description','wpautop');
+                     echo '<p class="categoryDescription">' . category_description($category_id) . "</p>";
                  }
 
                  function get_term_post_count($taxonomy = 'category', $term = '', $args = [])
@@ -112,7 +104,7 @@ $categories = get_categories($args);
 
                   $postsInCategorySubcategory = get_term_post_count('category', $thisTrueCat);
 
-                  echo "<span>Category Counter: " . $postsInCategorySubcategory . "</span>";
+                  echo "<span class='counter counterDecription'>Category Counter: </span><span class='counter counterNumber'>" . $postsInCategorySubcategory . "</span>";
 
                     foreach ($categories as $category) {
                         if ($thisTrueCat == $category->term_id) {
@@ -139,7 +131,7 @@ $categories = get_categories($args);
                                   echo round($percentageOfPosts) . ' %'; ?>
                                 </div>
                                 <div class="processbar">
-                                  <div class="bar" style="width:<?php echo $percentageOfPosts ?>%"></div>
+                                  <div class="bar" style="width:<?php echo $percentageOfPosts * 2 ?>%"></div>
                                 </div>
 
                                 <?php
