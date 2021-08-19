@@ -12,7 +12,6 @@ if ( 'page' == get_option('show_on_front') && get_option('page_for_posts') && is
 
 
     $page_id = get_page($page_for_posts_id);
-    $page_data = get_page( $page_id );
 
 
     rewind_posts();
@@ -26,7 +25,10 @@ endif;
     <div id="content"  class="center">
         <article>
             <div id="headline">
-                <?php echo '<h1>'. $page_data->post_title .'</h1>';// echo the title ?>
+                <?php 
+                    $page_data = get_page( $page_id );
+                    echo '<h1>'. $page_data->post_title .'</h1>'; // echo the title
+                ?>
             </div>
 
 
